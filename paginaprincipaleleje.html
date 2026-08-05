@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add('js');</script>
+
+<title>EL EJE — Organización política de jóvenes | La Libertad Avanza</title>
+<meta name="description" content="EL EJE es una organización política de jóvenes que forma dirigentes, organiza equipos y construye presencia federal en la Argentina. Más de 600 jóvenes y presencia en +16 provincias." />
+<meta name="theme-color" content="#04141b" />
+
+<!-- Cuando tengas la URL final (dominio propio o GitHub Pages), agregá aquí el canonical:
+     <link rel="canonical" href="https://TU-URL-FINAL/" /> -->
+
+<!-- Open Graph -->
+<meta property="og:title" content="EL EJE — de una Argentina libre" />
+<meta property="og:description" content="Organización política de jóvenes. Formación, organización y presencia federal. Sumate a EL EJE." />
+<meta property="og:type" content="website" />
+<!-- Cuando tengas la URL final, agregá: <meta property="og:url" content="https://TU-URL-FINAL/" /> -->
+<!-- og:image: guardá la imagen en assets/og-el-eje.jpg (1200x630). Cuando tengas dominio,
+     reemplazá esta ruta relativa por la URL ABSOLUTA: https://TU-URL-FINAL/assets/og-el-eje.jpg -->
+<meta property="og:image" content="assets/og-el-eje.jpg" />
+<meta property="og:site_name" content="EL EJE" />
+<meta property="og:locale" content="es_AR" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="EL EJE — de una Argentina libre" />
+<meta name="twitter:description" content="Organización política de jóvenes. Formación, organización y presencia federal. Sumate." />
+<meta name="twitter:image" content="assets/og-el-eje.jpg" />
+
+<!-- Favicon: guardá el archivo en assets/favicon-el-eje.webp -->
+<link rel="icon" type="image/webp" href="assets/favicon-el-eje.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     0. VARIABLES
+     ============================================================ */
+  :root{
+    /* Logo: guardá el archivo en assets/logo-el-eje.webp */
+    --logo:url("assets/logo-el-eje.webp");
+    --ink:#04141b; --ink-2:#06202b; --ink-3:#031016;
+    --teal-900:#0a2e3d; --teal-700:#12495b;
+    --gold:#c8a951; --gold-bright:#e6c979; --fire:#e85d26;
+    --cream:#f5f0e8; --cream-dim:rgba(245,240,232,.66); --cream-faint:rgba(245,240,232,.42);
+    --line:rgba(200,169,81,.22);
+    --card:rgba(255,255,255,.035); --card-brd:rgba(255,255,255,.09);
+    --shadow-card:0 24px 60px -24px rgba(0,0,0,.75), 0 6px 20px -10px rgba(0,0,0,.55);
+    --shadow-gold:0 20px 55px -20px rgba(200,169,81,.45);
+    --r-lg:26px; --r-md:18px; --r-sm:12px; --r-pill:999px;
+    --wrap:1160px; --headerH:68px;
+    --f-disp:"Oswald",system-ui,sans-serif;
+    --f-serif:"Fraunces",Georgia,serif;
+    --f-body:"Hanken Grotesk",system-ui,sans-serif;
+  }
+
+  /* ============================================================
+     1. RESET / BASE
+     ============================================================ */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--f-body);color:var(--cream);background:var(--ink);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+  /* Fondo base continuo de toda la página */
+  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+    background:
+      radial-gradient(1000px 820px at 82% -10%, rgba(18,73,91,.42), transparent 60%),
+      radial-gradient(760px 620px at 6% 2%, rgba(200,169,81,.07), transparent 55%),
+      radial-gradient(1200px 1000px at 50% 120%, rgba(10,46,61,.55), transparent 60%),
+      linear-gradient(180deg,#04141b 0%,#051a23 46%,#04141b 100%)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:24px}
+  section{scroll-margin-top:calc(var(--headerH) + 14px)}
+  .logo-mark{background-image:var(--logo);background-size:contain;background-repeat:no-repeat;
+    background-position:center;display:inline-block}
+
+  /* ============================================================
+     2. ACCESIBILIDAD (skip link, foco, sr-only)
+     ============================================================ */
+  .skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:var(--gold);color:#0c1418;
+    font-family:var(--f-body);font-weight:700;padding:10px 18px;border-radius:var(--r-pill);
+    text-decoration:none;transition:top .2s}
+  .skip-link:focus{top:12px}
+  :focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:4px}
+  #main:focus{outline:none}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* ============================================================
+     3. BOTONES
+     ============================================================ */
+  .btn{font-family:var(--f-body);font-weight:700;text-decoration:none;cursor:pointer;display:inline-flex;
+    align-items:center;gap:9px;border:none;letter-spacing:.01em;
+    transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,background .22s,color .22s,border-color .22s}
+  .btn-primary{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#0c1418;
+    padding:13px 26px;border-radius:var(--r-pill);font-size:.9rem;box-shadow:var(--shadow-gold)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 26px 60px -18px rgba(200,169,81,.62)}
+  .btn-primary .arw{transition:transform .22s}
+  .btn-primary:hover .arw{transform:translate(3px,-3px)}
+  .btn-ghost{background:transparent;color:var(--gold);padding:13px 24px;border-radius:var(--r-pill);
+    border:1.5px solid rgba(200,169,81,.5);font-size:.9rem}
+  .btn-ghost:hover{border-color:var(--gold);background:rgba(200,169,81,.08);transform:translateY(-2px)}
+  .btn-lg{font-size:1.02rem;padding:16px 34px}
+  .btn-xl{font-size:1.05rem;padding:17px 38px}
+
+  /* ============================================================
+     4. NAV / HEADER
+     ============================================================ */
+  header.nav{position:sticky;top:0;z-index:60;
+    background:rgba(4,20,27,.4);backdrop-filter:blur(9px) saturate(130%);
+    -webkit-backdrop-filter:blur(9px) saturate(130%);
+    border-bottom:1px solid rgba(200,169,81,.08);transition:background .35s,border-color .35s}
+  header.nav.scrolled{background:rgba(4,20,27,.8);border-bottom-color:var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--headerH);gap:18px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--cream);flex-shrink:0}
+  .brand .logo-mark{width:30px;height:36px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+  .brand .wm{font-family:var(--f-disp);font-weight:700;letter-spacing:.26em;font-size:1rem;text-transform:uppercase}
+  .brand .wm b{color:var(--gold);font-weight:700}
+  nav.links{display:flex;align-items:center;gap:22px}
+  nav.links a:not(.btn){color:var(--cream-dim);text-decoration:none;font-size:.8rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.11em;transition:color .2s;position:relative}
+  nav.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;
+    background:var(--gold);transition:width .25s}
+  nav.links a:not(.btn):hover,nav.links a.active{color:var(--cream)}
+  nav.links a:not(.btn):hover::after,nav.links a.active::after{width:100%}
+  nav.links .btn-primary{padding:11px 22px;font-size:.82rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+  .burger span{display:block;width:24px;height:2px;background:var(--cream);transition:.3s;border-radius:2px}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ============================================================
+     5. HERO
+     ============================================================ */
+  .hero{position:relative;padding:34px 0 88px;text-align:center;overflow:hidden;isolation:isolate}
+  /* Fondo abstracto del hero: expansión desde el eje + luces */
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(560px 460px at 50% 30%, rgba(200,169,81,.11), transparent 62%),
+      radial-gradient(900px 640px at 50% 8%, rgba(18,73,91,.5), transparent 66%),
+      linear-gradient(180deg, rgba(3,16,22,.55), transparent 40%, var(--ink))}
+  .hero .expansion{position:absolute;left:50%;top:32%;transform:translate(-50%,-50%);z-index:-1;
+    width:min(820px,150vw);aspect-ratio:1;pointer-events:none;opacity:.5;
+    background:
+      radial-gradient(circle, transparent 0 30%, rgba(200,169,81,.05) 30% 31%, transparent 31%),
+      radial-gradient(circle, transparent 0 44%, rgba(200,169,81,.045) 44% 45%, transparent 45%),
+      radial-gradient(circle, transparent 0 60%, rgba(200,169,81,.035) 60% 61%, transparent 61%)}
+  .hero .axis{position:absolute;left:50%;top:0;bottom:0;width:1px;z-index:-1;transform:translateX(-50%);
+    background:linear-gradient(180deg, transparent 8%, rgba(200,169,81,.06) 34%, transparent 70%);pointer-events:none}
+  .hero .grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.016;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .hero-compass{position:relative;width:min(150px,32vw);margin:0 auto 22px}
+  .hero-compass .logo-mark{width:100%;aspect-ratio:516/620;position:relative;z-index:2;
+    filter:drop-shadow(0 16px 32px rgba(0,0,0,.55));animation:float 9s ease-in-out infinite}
+  .hero-compass .halo{position:absolute;inset:-38% -38%;z-index:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(200,169,81,.22),rgba(200,169,81,0) 62%);animation:pulse 7s ease-in-out infinite}
+  .hero-compass .ring{position:absolute;inset:-14%;z-index:0;border-radius:50%;border:1px dashed rgba(200,169,81,.24);
+    -webkit-mask:radial-gradient(circle,transparent 60%,#000 61%);mask:radial-gradient(circle,transparent 60%,#000 61%);
+    animation:spin 60s linear infinite}
+  /* Puntos cardinales (español: N/E/S/O) — se conservan solo en el hero */
+  .card-pt{position:absolute;font-family:var(--f-disp);font-weight:600;color:var(--gold);font-size:.78rem;
+    letter-spacing:.16em;z-index:3;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+  .card-pt.n{top:-24px;left:50%;transform:translateX(-50%)}
+  .card-pt.s{bottom:-24px;left:50%;transform:translateX(-50%)}
+  .card-pt.e{right:-22px;top:50%;transform:translateY(-50%)}
+  .card-pt.o{left:-22px;top:50%;transform:translateY(-50%)}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-disp);text-transform:uppercase;
+    letter-spacing:.24em;font-size:.72rem;font-weight:500;color:var(--gold);padding:7px 16px;border:1px solid var(--line);
+    border-radius:var(--r-pill);background:rgba(200,169,81,.05);margin-bottom:22px}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--fire);box-shadow:0 0 10px var(--fire)}
+  h1.hero-title{font-family:var(--f-disp);font-weight:700;text-transform:uppercase;
+    font-size:clamp(2.5rem,7.2vw,5.3rem);line-height:.98;letter-spacing:.005em;margin-bottom:18px}
+  h1.hero-title .accent{color:var(--gold)}
+  .hero-serif{font-family:var(--f-serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,3vw,1.95rem);margin-bottom:20px}
+  .hero-sub{max-width:640px;margin:0 auto 34px;color:var(--cream-dim);font-size:clamp(1rem,2vw,1.14rem)}
+  .hero-cta{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+  .hero-note{margin-top:20px;color:var(--cream-dim);font-size:.82rem;letter-spacing:.02em}
+  .scroll-cue{margin-top:48px;display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:var(--cream-faint);
+    font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.2em;font-size:.66rem}
+  .scroll-cue .line{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:cueMove 2.4s ease-in-out infinite}
+
+  /* ============================================================
+     6. SECCIONES (comunes)
+     ============================================================ */
+  .section{padding:94px 0;position:relative}
+  /* Divisor superior sutil reutilizable */
+  .divide-top::before{content:"";position:absolute;top:0;left:12%;right:12%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(200,169,81,.28),transparent)}
+  .sec-label{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.26em;font-size:.75rem;
+    color:var(--gold);font-weight:500;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .sec-label::before{content:"";width:26px;height:1.5px;background:var(--gold)}
+  h2.sec-title{font-family:var(--f-serif);font-weight:600;font-size:clamp(1.9rem,4.4vw,3.15rem);
+    line-height:1.06;letter-spacing:-.01em;margin-bottom:22px}
+  h2.sec-title em{font-style:italic;color:var(--gold)}
+  .lead{color:var(--cream-dim);font-size:clamp(1.02rem,2vw,1.16rem);max-width:680px}
+
+  /* ------ QUIÉNES SOMOS (fondo limpio, algo más oscuro) ------ */
+  #nosotros{background:linear-gradient(180deg, rgba(3,16,22,.35), transparent 30%, rgba(3,16,22,.35))}
+  .qs-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+  .qs-copy p{color:var(--cream-dim);margin-bottom:16px;font-size:1.05rem}
+  .qs-copy p strong{color:var(--cream);font-weight:600}
+  .nosomos{display:flex;flex-direction:column;gap:10px;margin:26px 0}
+  .nosomos span{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.06em;font-size:1.02rem;
+    color:var(--cream-dim);display:flex;align-items:center;gap:12px}
+  .nosomos span::before{content:"✕";color:var(--fire);font-size:.85rem;flex-shrink:0}
+  .nosomos .yes{color:var(--cream);font-weight:600}
+  .nosomos .yes::before{content:"✦";color:var(--gold)}
+  .pullquote{position:relative;padding:44px 40px;border-radius:var(--r-lg);
+    background:linear-gradient(150deg,rgba(18,73,91,.5),rgba(10,46,61,.25));border:1px solid var(--card-brd);
+    box-shadow:var(--shadow-card);overflow:hidden}
+  .pullquote::before{content:"\201C";position:absolute;top:2px;left:22px;font-family:var(--f-serif);
+    font-size:5rem;color:rgba(200,169,81,.35);line-height:1}
+  .pullquote q{font-family:var(--f-serif);font-style:italic;font-weight:500;quotes:none;
+    font-size:clamp(1.4rem,2.6vw,1.95rem);line-height:1.24;display:block;margin:14px 0 18px}
+  .pullquote cite{font-family:var(--f-disp);font-style:normal;text-transform:uppercase;letter-spacing:.2em;
+    font-size:.72rem;color:var(--gold)}
+  .pullquote .wm{position:absolute;right:-22px;bottom:-22px;width:130px;height:156px;background-image:var(--logo);
+    background-size:contain;background-repeat:no-repeat;opacity:.12;transform:rotate(8deg)}
+
+  /* ------ NÚMEROS (banda propia, más oscura y con luz dorada) ------ */
+  .impacto{position:relative;padding:26px 0}
+  .imp-band{position:relative;border-radius:var(--r-lg);overflow:hidden;padding:56px 32px;
+    background:linear-gradient(180deg,#061d27,#03121a);border:1px solid var(--card-brd);
+    box-shadow:var(--shadow-card)}
+  .imp-band::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:70%;height:130px;background:radial-gradient(60% 100% at 50% 0%,rgba(200,169,81,.16),transparent 70%);pointer-events:none}
+  .imp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+  .imp-cell{text-align:center;position:relative}
+  .imp-cell:not(:last-child)::after{content:"";position:absolute;right:-12px;top:12%;height:76%;width:1px;
+    background:linear-gradient(180deg,transparent,var(--line),transparent)}
+  .imp-num{font-family:var(--f-disp);font-weight:700;font-size:clamp(2.7rem,6.4vw,4.3rem);color:var(--gold);line-height:1}
+  .imp-num .pre{color:var(--fire)}
+  .imp-lbl{color:var(--cream-dim);font-size:.96rem;margin-top:10px;max-width:210px;margin-inline:auto}
+
+  /* ------ MISIÓN / VISIÓN (degradé petróleo visible) ------ */
+  #mision{background:
+      radial-gradient(700px 500px at 88% 20%, rgba(18,73,91,.4), transparent 62%),
+      radial-gradient(600px 480px at 6% 90%, rgba(18,73,91,.28), transparent 60%)}
+  .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+  .mv-card{position:relative;padding:40px 36px;border-radius:var(--r-lg);background:var(--card);
+    border:1px solid var(--card-brd);box-shadow:var(--shadow-card);overflow:hidden;transition:transform .3s,border-color .3s}
+  .mv-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent 70%)}
+  .mv-card:hover{border-color:rgba(200,169,81,.45)}
+  .mv-ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px;
+    background:rgba(200,169,81,.1);border:1px solid var(--line)}
+  .mv-ico svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.6}
+  .mv-card h3{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.14em;font-size:1.18rem;font-weight:600;margin-bottom:14px}
+  .mv-card .thesis{font-family:var(--f-serif);font-style:italic;font-size:1.16rem;color:var(--cream);margin-bottom:16px;line-height:1.32}
+  .mv-card p{color:var(--cream-dim);font-size:1.01rem}
+
+  /* ------ PRESENCIA FEDERAL (limpio, leve luz dorada junto al dato) ------ */
+  #federal{background:linear-gradient(180deg,transparent, rgba(3,16,22,.4))}
+  .federal-grid{display:grid;grid-template-columns:1fr .9fr;gap:56px;align-items:center}
+  .map-copy .big{font-family:var(--f-disp);font-weight:700;text-transform:uppercase;color:var(--gold);
+    font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;margin:6px 0 2px;text-shadow:0 0 30px rgba(200,169,81,.25)}
+  .map-copy .lead.tight{margin-top:0}
+  .map-legend{display:flex;flex-direction:column;gap:14px;margin-top:30px}
+  .lg-item{display:flex;align-items:center;gap:12px;font-size:.95rem;color:var(--cream-dim)}
+  .lg-sw{width:16px;height:16px;border-radius:5px;flex-shrink:0}
+  .lg-sw.gold{background:var(--gold)}
+  .lg-sw.teal{background:#123f4e;border:1px solid var(--card-brd)}
+  .lg-sw.fire{background:var(--fire);border-radius:50%}
+  .map-side{position:relative}
+  .map-wrap{position:relative;max-width:400px;margin-inline:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))}
+  #argMap{width:100%;height:auto;display:block;overflow:visible}
+  #argMap .p{fill:#123f4e;stroke:#04141b;stroke-width:1.1;transition:fill .22s,filter .22s,stroke .22s;cursor:pointer}
+  #argMap .p:hover{fill:#1b6178}
+  #argMap .p.on{fill:#c8a951;stroke:#0a2e3d}
+  #argMap .p.on:hover{fill:#e6c979}
+  #argMap .p:focus-visible,#argMap .p.hl{outline:none;stroke:var(--gold-bright);stroke-width:2.4;
+    filter:drop-shadow(0 0 6px rgba(230,201,121,.85))}
+  #argMap .sede{cursor:pointer}
+  #argMap .sede-dot{fill:var(--fire)}
+  #argMap .sede-pulse{fill:var(--fire);pointer-events:none;transform-box:fill-box;transform-origin:center;
+    animation:sede 2.4s ease-out infinite}
+  #argMap .sede:focus-visible .sede-dot{stroke:var(--gold-bright);stroke-width:2}
+  .map-tip{position:fixed;pointer-events:none;z-index:80;background:rgba(4,20,27,.96);border:1px solid var(--line);
+    color:var(--cream);font-size:.82rem;font-weight:600;padding:7px 12px;border-radius:10px;opacity:0;
+    transform:translateY(4px);transition:opacity .15s,transform .15s;white-space:nowrap;
+    max-width:78vw;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+  .map-tip.show{opacity:1;transform:translateY(0)}
+  .map-tip b{color:var(--gold)}
+
+  /* ------ VALORES (degradé propio) ------ */
+  .valores{background:linear-gradient(180deg,transparent,rgba(6,32,43,.5),transparent)}
+  .val-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:46px}
+  .val-card{display:flex;flex-direction:column;padding:26px 22px;border-radius:var(--r-md);background:var(--card);
+    border:1px solid var(--card-brd);box-shadow:0 12px 30px -18px rgba(0,0,0,.6);
+    transition:transform .28s,background .28s,border-color .28s}
+  .val-card:hover{background:rgba(200,169,81,.08);border-color:rgba(200,169,81,.42)}
+  .val-num{font-family:var(--f-disp);color:rgba(200,169,81,.55);font-size:.78rem;letter-spacing:.2em;margin-bottom:12px}
+  .val-card h3{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.06em;font-size:1rem;font-weight:600;margin-bottom:9px;line-height:1.1}
+  .val-card p{color:var(--cream-dim);font-size:.9rem;line-height:1.5}
+
+  /* ------ NUESTRA FUERZA (oscuro con foco dorado central) ------ */
+  .fuerza{position:relative;text-align:center;padding:106px 0;overflow:hidden;isolation:isolate}
+  .fuerza::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(620px 420px at 50% 32%, rgba(200,169,81,.09), transparent 62%),
+      linear-gradient(180deg, rgba(6,32,43,.55), transparent 55%, rgba(3,16,22,.5))}
+  .fuerza .grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.015;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .fuerza .kick{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.26em;color:var(--gold);font-size:.78rem;margin-bottom:24px}
+  .fuerza h2{font-family:var(--f-disp);text-transform:uppercase;font-weight:700;font-size:clamp(1.9rem,5vw,3.3rem);
+    line-height:1.05;max-width:900px;margin:0 auto 28px}
+  .fuerza h2 .accent{color:var(--gold)}
+  .fuerza p{max-width:640px;margin:0 auto 18px;color:var(--cream-dim);font-size:1.08rem}
+  .fuerza p .em{color:var(--cream);font-weight:600}
+  .fuerza .stack{max-width:560px;margin:34px auto 0;display:flex;flex-direction:column;gap:8px}
+  .fuerza .stack b{font-family:var(--f-serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--cream)}
+  .fuerza .final{font-family:var(--f-disp);text-transform:uppercase;font-weight:700;letter-spacing:.04em;
+    font-size:clamp(1.6rem,4vw,2.6rem);color:var(--gold);margin-top:28px}
+
+  /* ------ CTA FINAL ------ */
+  .cta-final{padding:100px 0}
+  .cta-box{position:relative;text-align:center;padding:72px 40px;border-radius:calc(var(--r-lg) + 8px);
+    background:radial-gradient(700px 400px at 50% -10%, rgba(200,169,81,.18), transparent 60%),
+      linear-gradient(160deg,rgba(18,73,91,.55),rgba(4,20,27,.8));
+    border:1px solid rgba(200,169,81,.28);
+    box-shadow:0 40px 90px -40px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden}
+  .cta-box h2{font-family:var(--f-disp);text-transform:uppercase;font-weight:700;font-size:clamp(2rem,5.4vw,3.6rem);line-height:1;margin-bottom:18px}
+  .cta-box h2 .accent{color:var(--gold)}
+  .cta-box p{color:var(--cream-dim);max-width:560px;margin:0 auto 34px;font-size:1.08rem}
+
+  /* ============================================================
+     7. FOOTER
+     ============================================================ */
+  footer{border-top:1px solid var(--line);padding:60px 0 36px;background:rgba(3,14,20,.6)}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px}
+  .foot-brand{max-width:340px}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{color:var(--cream-dim);font-size:.95rem}
+  .foot-slogan{font-family:var(--f-serif);font-style:italic;color:var(--gold);font-size:1.14rem;margin-top:12px}
+  .foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+  .foot-col h2{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:var(--cream);margin-bottom:15px;font-weight:600}
+  .foot-col a{display:block;color:var(--cream-dim);text-decoration:none;font-size:.92rem;margin-bottom:9px;transition:color .2s}
+  .foot-col a:hover{color:var(--gold)}
+  .foot-bottom{padding-top:22px;border-top:1px solid var(--card-brd);color:var(--cream-dim);font-size:.82rem}
+
+  /* ============================================================
+     8. BACK TO TOP
+     ============================================================ */
+  .totop{position:fixed;right:22px;bottom:22px;z-index:70;width:46px;height:46px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(4,20,27,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    color:var(--gold);cursor:pointer;display:grid;place-items:center;opacity:0;transform:translateY(12px);
+    pointer-events:none;transition:opacity .3s,transform .3s,background .2s}
+  .totop.show{opacity:1;transform:translateY(0);pointer-events:auto}
+  .totop:hover{background:rgba(200,169,81,.14)}
+  .totop svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2}
+
+  /* ============================================================
+     9. REVEAL + ANIMACIONES
+     ============================================================ */
+  .js [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .js [data-reveal].in{opacity:1;transform:none}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  @keyframes pulse{0%,100%{opacity:.5;transform:scale(.98)}50%{opacity:.9;transform:scale(1.03)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes cueMove{0%,100%{opacity:.3;transform:translateY(-4px)}50%{opacity:1;transform:translateY(4px)}}
+  @keyframes sede{0%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(3.2)}}
+
+  /* ============================================================
+     10. RESPONSIVE
+     ============================================================ */
+  @media (max-width:980px){
+    .qs-grid,.federal-grid{grid-template-columns:1fr;gap:38px}
+    .val-grid{grid-template-columns:repeat(3,1fr)}
+    .imp-grid{grid-template-columns:repeat(2,1fr);gap:38px 24px}
+    .imp-cell:nth-child(2)::after{display:none}
+    .mv-grid{grid-template-columns:1fr}
+    nav.links{position:fixed;inset:var(--headerH) 0 auto 0;flex-direction:column;gap:0;background:rgba(4,20,27,.98);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      padding:12px 24px 26px;padding-bottom:calc(26px + env(safe-area-inset-bottom));border-bottom:1px solid var(--line);
+      transform:translateY(-130%);align-items:stretch;
+      max-height:calc(100vh - var(--headerH));max-height:calc(100dvh - var(--headerH));
+      overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+      /* Cerrado: fuera de pantalla y NO enfocable/interactivo (respaldo de inert). */
+      visibility:hidden;pointer-events:none;transition:transform .35s ease, visibility 0s linear .35s}
+    nav.links.open{transform:translateY(0);visibility:visible;pointer-events:auto;transition:transform .35s ease}
+    nav.links a:not(.btn){padding:15px 0;border-bottom:1px solid var(--card-brd);letter-spacing:.1em}
+    nav.links a:not(.btn)::after{display:none}
+    nav.links .btn-primary{margin-top:16px;justify-content:center}
+    .burger{display:flex}
+  }
+  @media (max-width:620px){
+    .val-grid{grid-template-columns:repeat(2,1fr)}
+    .imp-grid{grid-template-columns:1fr;gap:34px}
+    .imp-cell::after{display:none!important}
+    .hero{padding:26px 0 66px}
+    .cta-box{padding:52px 22px}.pullquote{padding:34px 24px}
+    .imp-band{padding:44px 20px}
+    .foot-cols{gap:34px}
+    .foot-col a{padding:5px 0;margin-bottom:5px}
+  }
+  /* En pantallas angostas (390-440px) las tarjetas de valores quedan mejor en 1 columna */
+  @media (max-width:440px){
+    .val-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:380px){
+    .wrap{padding-inline:18px}
+  }
+
+  /* Bloqueo de scroll del fondo con el menú abierto (robusto en iOS) */
+  body.menu-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+
+  /* Hover sólo con puntero fino: evita estados "pegados" en pantallas táctiles */
+  @media (hover:hover) and (pointer:fine){
+    .val-card:hover{transform:translateY(-4px)}
+    .mv-card:hover{transform:translateY(-4px)}
+  }
+
+  /* CTA del hero a ancho completo en celulares angostos */
+  @media (max-width:440px){
+    .hero-cta{flex-direction:column;align-items:center}
+    .hero-cta .btn{width:100%;max-width:340px;justify-content:center}
+  }
+
+  /* Evitar desbordes: grillas colapsables y palabras muy largas */
+  .qs-grid>*,.federal-grid>*,.mv-grid>*,.val-grid>*,.imp-grid>*,.foot-cols>*{min-width:0}
+  .val-card h3,.val-card p,.imp-lbl,.lg-item,.mv-card p{overflow-wrap:break-word}
+
+  /* ============================================================
+     11. PREFERENCIA: MOVIMIENTO REDUCIDO
+     ============================================================ */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .js [data-reveal]{opacity:1;transform:none}
+    .hero .expansion,.hero .axis{display:none}
+  }
+</style>
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+
+<body id="top">
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="EL EJE — inicio"><span class="logo-mark"></span><span class="wm">EL <b>EJE</b></span></a>
+    <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-controls="links" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="links" aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#numeros">Números</a>
+      <a href="#mision">Misión y visión</a>
+      <a href="#federal">Federal</a>
+      <a href="#valores">Valores</a>
+      <a href="https://elelearg.github.io/el-eje-formulario/?cb=4" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sumate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-label="Presentación de EL EJE">
+    <span class="expansion" aria-hidden="true"></span>
+    <span class="axis" aria-hidden="true"></span>
+    <span class="grain" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="hero-compass" aria-hidden="true">
+        <span class="halo"></span><span class="ring"></span>
+        <span class="card-pt n">N</span><span class="card-pt s">S</span><span class="card-pt e">E</span><span class="card-pt o">O</span>
+        <span class="logo-mark"></span>
+      </div>
+      <span class="eyebrow" data-reveal><span class="dot"></span>Organización política de jóvenes · La Libertad Avanza</span>
+      <h1 class="hero-title" data-reveal>No mires la historia<br><span class="accent">desde afuera.</span></h1>
+      <p class="hero-serif" data-reveal>EL EJE de una Argentina libre.</p>
+      <p class="hero-sub" data-reveal>Reunimos a una generación decidida a ocupar su lugar en la política argentina: formada, con estructura y con la ambición de incidir de verdad en el rumbo del país.</p>
+      <div class="hero-cta" data-reveal>
+        <a href="https://elelearg.github.io/el-eje-formulario/?cb=4" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Sumate a EL EJE <span class="arw" aria-hidden="true">↗</span></a>
+        <a href="https://www.instagram.com/elejearg?igsh=cGF0ZGliaDRoejV3" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="Conocé EL EJE en Instagram, abre en una pestaña nueva">Conocé EL EJE en Instagram</a>
+      </div>
+      <p class="hero-note" data-reveal>+600 jóvenes · presencia en +16 provincias · una fuerza que crece.</p>
+      <div class="scroll-cue" data-reveal aria-hidden="true"><span class="line"></span>Deslizá</div>
+    </div>
+  </section>
+
+  <!-- ===================== QUIÉNES SOMOS ===================== -->
+  <section class="section" id="nosotros">
+    <div class="wrap qs-grid">
+      <div class="qs-copy">
+        <p class="sec-label" data-reveal>01 · Quiénes somos</p>
+        <h2 class="sec-title" data-reveal>Identidad, estructura y <em>vocación de poder.</em></h2>
+        <p data-reveal>El Eje reúne a jóvenes con convicciones y voluntad de conducir. Detectamos liderazgos, armamos equipos y ganamos presencia en los espacios donde se define el rumbo del país, para defender las ideas de la libertad con seriedad y método.</p>
+        <p data-reveal>Somos una <strong>comunidad que forma dirigentes y genera cuadros políticos</strong>, no un grupo de amigos ni una simple escuela de cursos. La formación es una herramienta; el objetivo es la conducción.</p>
+        <div class="nosomos" data-reveal>
+          <span>No somos solamente un espacio de estudio.</span>
+          <span>No somos un grupo de debate.</span>
+          <span>No somos espectadores.</span>
+          <span class="yes">Somos una organización política con proyección.</span>
+        </div>
+        <p data-reveal>Nos preparamos para estar a la altura, nos ordenamos porque nadie cambia un país en soledad, y avanzamos porque las ideas necesitan <strong>fuerza real</strong> para volverse gobierno y realidad.</p>
+      </div>
+      <figure class="pullquote" data-reveal>
+        <blockquote><q>No venimos a ocupar un lugar más. Venimos a convertirnos en una fuerza capaz de cambiar las cosas.</q></blockquote>
+        <cite>— EL EJE</cite>
+        <span class="wm" aria-hidden="true"></span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== NÚMEROS ===================== -->
+  <section class="impacto" id="numeros" aria-labelledby="numeros-h">
+    <div class="wrap">
+      <h2 id="numeros-h" class="sr-only">EL EJE en números</h2>
+      <div class="imp-band">
+        <div class="imp-grid">
+          <div class="imp-cell" data-reveal>
+            <p class="imp-num"><span class="pre">+</span><span data-count="600">600</span></p>
+            <p class="imp-lbl">Jóvenes forman parte de El Eje</p>
+          </div>
+          <div class="imp-cell" data-reveal>
+            <p class="imp-num"><span class="pre">+</span><span data-count="15">15</span></p>
+            <p class="imp-lbl">Referentes pasaron por la organización</p>
+          </div>
+          <div class="imp-cell" data-reveal>
+            <p class="imp-num"><span class="pre">+</span><span data-count="10">10</span></p>
+            <p class="imp-lbl">Dirigentes que respaldan a El Eje</p>
+          </div>
+          <div class="imp-cell" data-reveal>
+            <p class="imp-num"><span class="pre">+</span><span data-count="16">16</span></p>
+            <p class="imp-lbl">Provincias con presencia federal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MISIÓN / VISIÓN ===================== -->
+  <section class="section divide-top" id="mision">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>02 · Hacia dónde vamos</p>
+      <h2 class="sec-title" data-reveal>Misión y <em>visión.</em></h2>
+      <div class="mv-grid">
+        <article class="mv-card" data-reveal>
+          <div class="mv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><path d="m15 9-4 5-2-2"/></svg></div>
+          <h3>Misión</h3>
+          <p class="thesis">Convertir el compromiso de miles de jóvenes en una fuerza política ordenada.</p>
+          <p>Damos herramientas, detectamos nuevos liderazgos y armamos equipos capaces de asumir responsabilidades reales. Formamos para conducir y trabajamos para crecer: las ideas, sin estructura que las sostenga, se apagan.</p>
+        </article>
+        <article class="mv-card" data-reveal>
+          <div class="mv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Visión</h3>
+          <p class="thesis">Ser la referencia juvenil de las ideas de la libertad en la Argentina.</p>
+          <p>Una nueva camada ocupando lugares de decisión en instituciones, universidades, empresas, medios y gobiernos. Preparada para asumir sin improvisar, que entienda el poder como responsabilidad y no como privilegio. Crecer en capacidad e influencia, no sólo en cantidad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRESENCIA FEDERAL / MAPA ===================== -->
+  <section class="section divide-top" id="federal">
+    <div class="wrap federal-grid">
+      <div class="map-copy">
+        <p class="sec-label" data-reveal>03 · Presencia federal</p>
+        <h2 class="sec-title" data-reveal>Una fuerza <em>en todo el país.</em></h2>
+        <p class="lead" data-reveal>El Eje no es un fenómeno porteño: es una construcción federal, con miembros y equipos trabajando a lo largo y ancho del país.</p>
+        <p class="big" data-reveal>+16</p>
+        <p class="lead tight" data-reveal>provincias con presencia real, y sumando.</p>
+        <div class="map-legend" data-reveal>
+          <p class="lg-item"><span class="lg-sw gold" aria-hidden="true"></span>Provincias con presencia de El Eje</p>
+          <p class="lg-item"><span class="lg-sw fire" aria-hidden="true"></span>CABA · sede central</p>
+          <p class="lg-item"><span class="lg-sw teal" aria-hidden="true"></span>Resto del país — en expansión</p>
+        </div>
+      </div>
+      <div class="map-side" data-reveal>
+        <div class="map-wrap">
+          <svg id="argMap" viewBox="0 0 497.7 1000.0" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Mapa de la presencia federal de El Eje" aria-describedby="mapSummary">
+<path class="p" data-n="Catamarca" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Catamarca. Sin presencia registrada." d="M213.0 199.5 L214.8 207.6 L215.1 213.8 L214.2 220.0 L213.8 220.0 L214.4 222.1 L216.8 222.6 L217.8 224.2 L219.0 225.0 L219.6 225.7 L219.1 226.4 L219.5 227.6 L219.5 228.2 L219.7 229.0 L220.3 230.6 L220.5 231.7 L220.5 232.6 L220.6 236.0 L222.0 237.7 L221.3 238.0 L220.8 238.9 L220.9 239.8 L221.2 240.5 L221.7 241.3 L222.1 242.1 L221.7 242.7 L221.2 243.3 L221.0 243.9 L221.0 245.2 L221.3 246.2 L217.4 247.3 L218.6 255.6 L214.0 260.3 L207.5 262.2 L205.9 256.2 L204.5 252.7 L200.9 241.9 L201.1 239.6 L200.3 238.2 L198.8 238.2 L198.8 235.6 L196.1 232.4 L193.8 230.1 L192.3 228.6 L186.0 226.4 L185.6 225.7 L185.6 224.3 L186.6 223.2 L186.8 222.1 L185.7 221.4 L184.5 220.4 L183.5 219.5 L183.1 216.7 L182.3 216.7 L183.0 215.6 L181.5 209.9 L171.8 208.7 L170.7 209.1 L168.9 212.0 L164.8 212.6 L156.7 210.3 L156.1 210.6 L154.9 210.9 L154.9 211.5 L154.1 211.5 L153.3 212.3 L152.8 211.2 L152.8 209.8 L152.0 208.3 L151.5 207.0 L151.3 205.5 L150.9 204.2 L149.9 204.9 L148.5 205.5 L147.6 206.5 L147.2 207.0 L146.3 204.7 L145.6 204.0 L143.8 204.0 L142.8 204.5 L142.6 203.1 L142.7 202.0 L141.7 202.3 L140.4 201.5 L139.6 202.6 L139.4 201.5 L139.6 199.5 L139.3 197.7 L137.0 195.8 L134.3 196.0 L131.6 194.1 L129.1 194.4 L126.9 194.4 L124.6 194.9 L125.6 192.2 L126.9 189.4 L128.3 187.7 L129.3 186.9 L126.4 186.0 L128.6 184.3 L129.1 181.8 L130.6 180.7 L132.3 181.5 L129.6 178.8 L131.6 176.8 L132.8 175.4 L134.8 177.4 L136.0 178.5 L136.5 176.8 L137.0 174.6 L139.5 174.6 L141.7 174.3 L144.0 172.0 L143.0 169.2 L140.0 165.6 L136.8 158.8 L137.0 152.1 L141.0 148.4 L138.3 135.1 L136.8 132.8 L138.5 132.0 L137.0 130.0 L137.0 127.7 L138.0 125.5 L136.8 123.5 L138.0 121.8 L139.3 119.8 L151.9 122.6 L162.5 122.3 L174.4 122.6 L180.4 121.8 L181.4 123.2 L181.4 124.3 L181.4 126.0 L182.9 126.0 L183.9 126.6 L183.4 128.6 L182.9 130.3 L182.6 132.3 L182.1 134.0 L180.9 136.0 L179.7 136.2 L175.9 135.7 L176.4 141.1 L176.4 144.2 L179.4 146.1 L181.4 147.8 L182.1 151.8 L183.1 154.0 L185.6 155.2 L186.8 155.7 L186.6 152.4 L188.6 149.2 L191.1 148.7 L192.0 150.4 L191.8 152.4 L192.2 153.9 L192.3 155.3 L191.1 156.0 L190.8 157.0 L190.7 158.4 L191.8 159.3 L191.1 159.7 L190.3 160.8 L191.1 162.3 L193.9 161.6 L195.9 163.1 L198.1 164.6 L198.9 165.7 L197.0 168.4 L198.0 169.9 L198.2 171.2 L197.2 171.8 L196.5 172.7 L195.4 173.9 L194.8 174.7 L195.8 174.7 L195.3 175.4 L194.4 176.4 L193.2 177.8 L193.0 178.5 L191.9 178.3 L191.7 179.7 L193.5 181.4 L195.4 182.4 L195.5 186.9 L196.5 191.7 L197.5 193.1 L198.6 196.3 L199.6 194.8 L200.7 195.6 L201.6 197.0 L201.8 199.4 L203.4 200.6 L204.7 202.0 L205.4 199.0 L207.7 198.1 L208.9 197.0 L210.3 197.3 L211.5 198.4 L213.0 199.5Z"/>
+<path class="p" data-n="Chubut" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Chubut. Sin presencia registrada." d="M215.2 601.8 L216.0 604.3 L217.8 606.0 L220.9 608.4 L223.3 608.6 L226.1 609.1 L229.7 609.2 L228.2 610.6 L226.9 610.8 L226.9 611.9 L226.2 613.3 L226.1 614.3 L228.8 615.0 L231.2 614.7 L232.7 613.6 L234.7 614.2 L236.2 614.5 L237.5 614.3 L238.5 612.8 L238.8 611.2 L238.1 609.7 L237.4 609.0 L235.7 609.0 L234.3 608.8 L233.2 609.4 L231.9 609.3 L236.0 607.9 L238.3 607.3 L240.5 606.3 L243.0 605.2 L245.0 604.4 L246.1 606.7 L247.8 608.8 L248.8 610.9 L249.0 612.3 L248.3 613.6 L248.8 615.8 L249.3 618.1 L249.0 620.3 L248.1 623.3 L247.6 624.5 L246.2 625.3 L239.9 626.6 L237.8 627.3 L236.2 627.0 L234.4 625.0 L234.1 623.1 L235.3 620.3 L234.1 620.1 L234.1 618.9 L233.4 618.6 L232.8 618.7 L232.3 617.4 L229.8 616.7 L227.0 616.4 L224.5 617.3 L222.0 618.9 L220.5 620.0 L218.6 619.8 L217.4 621.4 L216.6 623.0 L216.3 623.9 L218.2 625.3 L219.9 626.1 L221.4 626.6 L224.1 628.0 L225.0 628.5 L227.9 628.6 L229.0 629.7 L232.3 629.1 L232.6 630.5 L229.2 632.4 L224.9 634.5 L219.2 637.3 L216.6 639.2 L215.8 640.4 L216.3 642.0 L214.4 643.9 L212.9 646.2 L211.1 647.5 L210.0 648.9 L209.5 650.6 L208.9 652.9 L210.5 653.7 L209.9 654.0 L209.8 656.7 L210.9 658.0 L212.7 658.8 L211.4 659.6 L211.7 660.4 L213.9 660.5 L212.1 661.2 L212.0 662.3 L212.4 663.8 L211.1 663.8 L210.5 664.9 L210.5 666.7 L211.3 667.3 L211.5 668.8 L212.4 669.4 L212.4 670.5 L211.4 670.6 L210.9 671.1 L210.6 671.8 L210.3 672.3 L211.0 672.9 L210.6 674.3 L209.9 674.3 L208.6 675.0 L208.9 676.1 L208.2 676.7 L207.0 675.7 L204.4 677.9 L203.1 678.4 L202.2 679.9 L202.0 682.1 L201.0 682.4 L201.0 683.6 L202.0 685.2 L203.3 685.5 L204.6 685.1 L205.3 685.3 L203.8 687.0 L202.8 687.6 L203.8 688.5 L203.7 689.3 L202.8 689.7 L201.5 689.8 L200.5 689.1 L199.9 688.6 L199.0 689.5 L198.7 688.6 L198.1 687.8 L197.2 688.0 L197.1 688.8 L196.9 689.7 L195.9 689.5 L195.3 688.8 L194.5 688.2 L193.7 687.8 L192.9 687.8 L192.0 687.7 L191.3 687.7 L190.6 687.5 L189.8 688.1 L189.8 688.8 L188.6 688.8 L187.3 689.4 L186.0 689.5 L185.0 690.0 L184.0 690.3 L183.0 690.8 L182.4 691.4 L183.1 692.2 L184.2 692.5 L184.1 693.3 L182.5 692.3 L181.4 692.3 L181.0 693.0 L182.4 693.7 L182.9 694.7 L179.4 694.5 L176.7 694.5 L174.3 695.3 L171.5 697.1 L168.1 701.8 L167.0 703.3 L164.2 705.9 L163.8 707.4 L164.0 708.5 L163.8 710.0 L163.9 710.8 L162.8 710.8 L161.9 711.7 L161.1 712.5 L160.3 713.6 L159.6 714.7 L159.3 715.6 L158.8 716.7 L107.4 716.7 L67.4 716.6 L68.0 715.2 L66.9 713.7 L65.1 712.5 L64.5 711.7 L65.3 710.3 L64.5 709.5 L63.5 708.2 L64.8 707.6 L64.3 706.5 L63.0 706.1 L65.0 705.7 L65.5 705.1 L63.9 704.4 L66.4 703.5 L67.7 702.8 L69.9 703.1 L71.3 701.9 L70.1 701.1 L70.6 699.5 L71.3 699.2 L72.1 699.8 L74.1 697.4 L75.6 696.3 L73.1 693.0 L70.8 691.6 L69.1 688.7 L68.6 687.4 L66.1 686.5 L64.6 686.3 L62.7 685.8 L61.7 687.4 L59.7 686.3 L58.2 684.5 L58.0 681.8 L61.7 682.5 L63.4 682.9 L63.9 681.2 L65.9 681.6 L67.4 682.5 L69.1 681.6 L70.6 680.7 L72.3 681.6 L74.6 682.7 L75.6 682.9 L76.3 681.2 L77.5 678.5 L76.5 676.5 L79.3 676.2 L79.0 674.7 L77.5 672.6 L74.1 671.3 L68.6 671.3 L65.9 670.0 L64.4 671.8 L63.4 669.5 L64.4 668.2 L64.4 666.1 L65.6 665.7 L63.4 664.1 L62.4 663.0 L64.4 662.7 L67.1 658.0 L65.1 655.7 L67.4 653.5 L69.1 652.3 L69.6 649.1 L65.6 647.8 L63.7 647.1 L61.4 647.3 L63.2 645.7 L61.7 643.9 L60.7 642.1 L61.4 640.5 L62.7 639.6 L65.1 640.0 L64.6 636.8 L64.6 635.0 L62.4 635.2 L60.4 632.9 L58.7 630.8 L56.5 628.5 L55.2 626.7 L55.7 624.4 L54.7 622.3 L57.0 622.3 L57.5 619.1 L58.5 617.4 L58.2 614.0 L55.2 611.9 L55.5 610.5 L54.7 605.8 L58.0 606.3 L57.2 604.9 L61.2 607.0 L62.4 607.0 L64.6 605.3 L64.4 603.5 L63.4 601.8 L215.2 601.8Z"/>
+<path class="p" data-n="Formosa" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Formosa. Sin presencia registrada." d="M383.3 126.6 L382.5 125.4 L381.5 123.6 L380.4 120.8 L378.2 118.2 L375.8 117.8 L373.2 116.1 L369.8 113.6 L367.8 115.5 L365.8 113.8 L365.0 112.0 L363.2 110.9 L360.3 110.6 L353.4 106.4 L347.0 102.2 L341.4 96.6 L329.3 87.4 L325.9 88.1 L322.4 87.5 L319.4 86.4 L315.0 84.0 L313.7 83.3 L311.0 83.2 L307.9 81.7 L305.9 79.0 L305.4 75.9 L301.0 72.5 L296.5 70.3 L295.6 68.3 L293.9 66.5 L292.4 66.6 L286.4 59.9 L281.9 51.8 L280.3 48.7 L277.1 44.4 L277.2 89.3 L280.4 91.0 L280.7 92.0 L282.0 93.2 L282.8 92.5 L283.4 93.5 L285.2 93.6 L287.0 94.6 L287.4 96.1 L290.3 96.0 L291.6 98.0 L291.7 99.1 L294.5 99.6 L296.6 104.3 L303.1 106.0 L304.7 109.1 L304.6 110.5 L309.4 115.6 L314.5 118.6 L315.3 120.0 L318.1 120.6 L325.3 130.2 L324.8 131.7 L325.6 133.6 L328.5 135.3 L332.2 138.1 L335.2 142.0 L337.2 145.1 L337.6 148.3 L339.5 148.1 L341.6 148.9 L342.2 148.6 L343.7 149.8 L343.7 150.8 L344.0 151.6 L344.2 154.0 L345.8 154.2 L348.3 153.8 L348.9 152.6 L351.4 155.1 L352.5 155.1 L353.9 156.2 L355.6 158.3 L356.7 159.3 L357.3 159.1 L358.2 159.8 L358.0 160.7 L358.4 161.3 L359.2 161.0 L359.6 161.6 L360.1 162.8 L361.5 163.8 L362.3 164.2 L362.6 165.2 L363.4 165.5 L364.2 166.3 L364.2 167.5 L365.7 168.0 L366.4 168.6 L367.4 169.2 L368.0 169.2 L367.5 167.2 L368.5 167.1 L368.6 166.1 L369.3 166.0 L369.3 165.0 L369.4 164.2 L369.3 163.2 L369.3 162.6 L370.6 162.8 L370.8 162.6 L370.2 162.0 L370.7 161.2 L370.8 160.4 L370.1 160.0 L370.2 159.2 L370.5 158.5 L369.8 157.7 L370.8 157.4 L370.4 156.8 L370.2 155.8 L370.6 154.9 L371.7 153.8 L371.4 151.9 L372.8 151.0 L372.2 150.2 L372.7 148.4 L374.5 147.2 L376.8 145.8 L378.4 144.4 L377.6 142.8 L378.9 141.5 L378.2 140.1 L379.9 139.1 L379.6 137.4 L381.5 135.8 L380.5 135.4 L381.3 134.2 L382.4 134.4 L382.9 132.8 L384.0 133.5 L384.9 131.3 L385.2 128.6 L384.4 127.2 L383.3 126.6Z"/>
+<path class="p" data-n="La Pampa" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="La Pampa. Sin presencia registrada." d="M253.7 525.8 L252.6 525.8 L252.1 525.3 L251.7 525.7 L251.5 525.2 L250.8 525.2 L250.0 524.8 L250.2 524.2 L249.5 523.9 L249.2 523.4 L248.7 523.6 L248.1 523.5 L248.2 523.1 L248.1 522.7 L247.5 522.8 L247.2 522.6 L247.5 522.2 L246.9 522.0 L246.3 522.0 L245.8 521.7 L245.6 521.0 L245.0 520.7 L245.5 520.2 L244.9 520.0 L244.5 519.3 L244.2 519.8 L243.7 520.1 L243.3 520.3 L243.6 519.6 L243.2 519.3 L242.6 519.2 L242.3 519.6 L241.9 519.0 L241.4 519.0 L241.6 518.5 L241.0 517.9 L240.3 517.6 L239.8 517.3 L239.8 516.8 L239.4 516.8 L239.2 516.5 L238.3 516.3 L237.5 515.8 L236.7 515.3 L234.9 514.5 L233.7 514.0 L233.2 513.4 L232.6 513.9 L232.1 513.3 L231.8 512.8 L231.3 513.2 L230.8 513.3 L231.2 512.6 L230.5 512.9 L230.2 512.7 L229.4 512.4 L229.0 512.3 L228.6 512.6 L228.2 512.5 L228.2 512.1 L227.5 512.4 L227.1 512.4 L226.6 512.1 L226.4 512.3 L225.9 512.1 L225.5 512.0 L224.8 511.6 L224.0 511.7 L223.7 511.7 L221.7 511.1 L220.9 511.4 L220.1 511.1 L219.4 511.4 L219.4 511.8 L218.4 511.5 L217.3 511.3 L216.8 511.1 L215.7 511.0 L215.2 510.8 L215.0 510.3 L214.7 510.7 L214.4 511.0 L214.1 511.1 L213.9 510.7 L213.4 510.7 L212.8 510.9 L213.2 511.5 L212.6 511.7 L212.1 511.5 L211.4 511.5 L211.2 511.1 L210.3 511.6 L209.2 512.1 L208.9 512.1 L208.7 511.5 L207.5 511.2 L206.9 510.9 L205.4 509.9 L204.1 510.0 L203.9 509.7 L203.5 509.9 L203.3 510.2 L203.8 510.6 L203.4 510.8 L203.1 510.5 L203.1 511.0 L202.6 510.7 L202.8 511.1 L201.8 511.6 L201.2 511.1 L200.9 511.4 L200.5 511.1 L200.3 511.0 L199.9 511.1 L199.4 510.9 L199.5 510.5 L199.1 510.9 L198.9 510.8 L199.1 510.5 L198.8 510.3 L198.6 510.6 L198.4 510.3 L197.7 510.7 L197.8 510.4 L197.6 510.3 L197.4 510.5 L197.5 510.0 L196.7 510.1 L196.8 509.8 L196.3 510.0 L196.4 509.6 L195.9 509.8 L195.9 509.5 L196.0 509.1 L195.1 509.1 L194.2 509.0 L194.0 509.3 L193.9 508.9 L193.7 509.2 L193.6 509.0 L193.3 509.2 L193.0 509.2 L193.0 508.8 L192.9 508.7 L192.8 508.4 L192.5 508.6 L192.3 508.7 L192.0 508.9 L192.0 509.1 L191.8 508.7 L191.7 508.8 L191.3 508.7 L190.7 509.1 L190.7 508.6 L190.5 508.8 L190.3 508.8 L189.9 508.9 L189.6 508.9 L189.3 508.8 L188.9 509.0 L188.2 509.4 L188.0 509.0 L187.8 509.0 L187.7 509.6 L187.5 509.2 L187.2 509.5 L186.7 509.1 L186.2 509.0 L185.9 508.9 L185.8 509.1 L182.9 508.9 L179.9 506.7 L180.9 502.5 L178.4 501.5 L175.4 501.3 L174.0 500.0 L170.7 499.3 L169.2 497.1 L168.2 495.1 L168.0 493.9 L165.0 495.3 L161.6 495.1 L157.6 493.6 L156.4 491.4 L155.9 489.7 L153.6 489.7 L152.4 488.2 L152.6 486.2 L154.6 485.7 L156.1 483.2 L155.1 480.0 L153.9 477.5 L149.9 476.5 L147.4 476.0 L145.2 475.5 L143.7 475.5 L143.5 439.8 L143.0 437.3 L143.0 431.7 L143.0 429.4 L215.6 430.4 L215.6 401.7 L253.3 402.0 L253.7 525.8Z"/>
+<path class="p" data-n="La Rioja" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="La Rioja. Sin presencia registrada." d="M207.9 262.2 L199.9 288.1 L199.7 312.9 L183.7 315.4 L179.9 313.8 L176.6 310.8 L174.8 305.5 L173.3 305.4 L169.5 298.6 L170.4 294.5 L169.2 292.0 L170.0 289.6 L169.4 287.4 L170.0 284.8 L168.1 282.6 L166.3 279.2 L165.5 278.6 L162.5 276.5 L160.6 273.4 L158.8 270.1 L159.0 267.3 L155.5 263.6 L151.8 259.8 L149.0 256.9 L147.2 255.1 L145.3 254.7 L145.6 252.4 L143.7 252.4 L143.7 251.6 L139.1 248.4 L135.6 248.2 L134.0 248.5 L132.9 247.8 L132.2 248.2 L131.6 247.8 L130.7 248.2 L130.0 248.2 L129.6 247.9 L129.8 247.0 L129.2 247.8 L128.6 247.8 L128.5 248.7 L127.8 248.9 L126.9 248.5 L126.5 247.8 L126.3 246.8 L126.2 245.5 L126.6 244.3 L127.2 243.5 L127.4 243.9 L127.7 243.0 L127.2 242.5 L127.0 241.7 L127.5 240.7 L127.4 239.7 L127.5 239.1 L127.8 239.3 L127.8 238.8 L127.8 238.0 L127.1 238.0 L127.3 237.2 L127.2 236.3 L126.9 235.3 L127.7 234.1 L128.2 235.1 L128.5 234.3 L129.0 233.5 L128.6 232.8 L128.8 232.3 L129.2 232.0 L129.1 231.0 L128.5 230.8 L128.5 229.7 L127.8 228.9 L128.2 228.0 L128.3 227.3 L128.7 226.5 L129.0 226.2 L123.3 223.3 L123.2 222.4 L122.8 222.1 L122.5 221.5 L122.1 220.7 L122.1 219.6 L122.4 218.8 L122.2 218.4 L119.9 213.3 L119.1 213.9 L118.2 214.4 L117.3 214.4 L116.6 213.7 L116.2 213.0 L115.5 213.7 L114.3 213.0 L113.4 213.4 L112.5 212.7 L113.0 212.1 L113.7 212.3 L113.8 211.4 L114.6 211.4 L115.3 210.5 L115.6 209.0 L116.2 208.3 L116.6 206.7 L118.2 207.9 L118.3 206.8 L118.8 206.5 L119.5 206.0 L119.7 205.3 L120.2 204.2 L120.3 203.4 L121.0 202.7 L120.8 202.0 L121.3 201.3 L121.3 200.6 L122.1 200.6 L122.5 200.6 L122.9 200.7 L123.5 200.0 L124.0 199.5 L124.1 198.6 L123.9 197.7 L124.6 197.1 L124.8 195.9 L124.8 194.9 L131.6 193.7 L134.4 195.8 L137.4 195.8 L137.4 197.0 L139.5 198.0 L139.6 202.4 L140.6 201.5 L141.7 202.4 L142.2 201.5 L142.7 204.4 L144.3 203.6 L145.8 204.0 L146.6 205.6 L147.3 206.7 L150.3 203.8 L152.0 207.4 L153.3 210.1 L153.5 212.6 L155.0 211.2 L155.7 211.0 L156.7 210.1 L164.7 212.4 L169.1 211.9 L171.3 208.8 L181.5 209.7 L183.1 215.5 L182.1 217.0 L183.2 216.6 L183.5 219.2 L186.8 222.2 L187.2 223.1 L185.7 223.6 L185.2 224.6 L186.2 226.6 L188.6 227.1 L192.2 228.4 L199.5 235.7 L198.6 238.5 L201.3 238.5 L201.3 240.9 L200.8 242.2 L205.9 256.6 L206.9 259.9 L207.9 262.2Z"/>
+<path class="p" data-n="Santa Cruz" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Santa Cruz. Sin presencia registrada." d="M158.7 716.6 L158.8 717.5 L158.2 718.1 L157.7 719.8 L158.3 723.2 L160.4 728.9 L162.5 733.2 L164.3 735.2 L166.5 735.3 L167.3 736.3 L168.4 736.7 L169.4 737.3 L171.1 739.5 L172.3 740.9 L173.3 741.7 L174.3 742.5 L175.3 743.6 L176.1 744.3 L176.4 744.9 L179.2 746.4 L180.4 746.4 L181.1 747.0 L183.1 746.7 L185.6 746.9 L189.2 747.9 L191.9 748.5 L193.2 747.9 L195.6 747.7 L197.7 748.1 L198.2 749.2 L199.2 750.1 L200.5 751.0 L200.6 751.7 L200.1 752.6 L200.8 753.4 L201.2 756.5 L200.7 758.8 L200.1 761.8 L199.1 763.4 L198.4 765.1 L197.9 766.5 L197.4 767.4 L197.9 768.7 L198.2 770.3 L198.5 771.0 L200.0 771.2 L200.3 771.7 L199.5 771.8 L199.7 772.6 L199.4 773.3 L197.6 772.4 L196.6 771.8 L195.9 772.2 L196.0 773.0 L196.5 773.9 L195.1 775.5 L195.5 776.1 L196.5 776.2 L196.9 776.9 L196.6 777.8 L195.4 777.4 L194.5 776.7 L193.2 776.8 L192.0 777.1 L191.5 777.7 L190.9 779.4 L189.2 779.8 L188.0 780.7 L187.0 781.9 L186.2 782.8 L186.8 784.1 L185.5 783.9 L184.1 784.2 L184.5 785.5 L183.1 786.0 L180.3 786.4 L179.4 786.9 L178.3 787.4 L177.2 788.0 L175.9 788.8 L174.8 789.8 L175.6 790.6 L174.6 791.3 L173.1 791.4 L171.8 791.7 L170.6 793.0 L169.0 793.6 L168.9 795.0 L168.0 795.9 L167.6 796.9 L167.5 797.7 L166.0 798.4 L162.8 799.8 L161.2 801.4 L159.8 802.8 L158.8 804.6 L158.6 805.4 L157.6 806.2 L158.0 807.1 L158.6 807.5 L158.3 808.1 L157.3 808.1 L156.6 808.5 L157.1 809.1 L157.6 809.9 L158.6 809.7 L158.8 810.3 L156.8 814.9 L156.1 819.6 L155.1 824.7 L152.9 830.1 L147.7 833.0 L145.0 834.4 L141.5 834.4 L141.2 836.2 L136.0 837.8 L131.8 839.8 L128.8 841.2 L126.1 845.4 L123.6 849.6 L123.6 852.8 L123.9 857.2 L122.1 858.8 L123.6 860.0 L126.1 869.6 L128.1 874.9 L127.4 877.8 L132.3 887.6 L136.8 892.4 L142.0 898.6 L140.5 899.0 L138.5 897.4 L136.3 897.0 L131.6 896.8 L127.6 895.5 L125.6 893.4 L123.1 892.6 L115.7 893.2 L104.3 888.4 L62.4 888.7 L59.7 888.0 L61.2 885.6 L59.9 883.3 L57.7 881.0 L55.7 880.8 L53.5 880.0 L52.5 878.2 L51.8 876.3 L49.0 876.5 L51.5 874.7 L52.5 872.8 L52.3 870.8 L50.8 870.0 L52.8 867.9 L53.2 865.7 L51.0 865.3 L50.0 863.1 L50.8 860.6 L53.0 860.4 L53.2 858.4 L53.2 855.2 L51.0 852.4 L52.5 850.6 L51.0 849.0 L48.8 848.4 L47.1 848.2 L46.3 850.0 L46.3 851.2 L44.6 850.0 L42.8 848.8 L40.6 848.8 L39.1 850.6 L37.1 852.2 L36.4 853.4 L34.7 853.8 L32.9 854.2 L31.4 854.8 L30.2 853.4 L31.2 851.6 L33.4 850.2 L31.2 849.4 L29.7 846.8 L28.2 844.8 L26.2 842.2 L26.7 840.8 L25.2 839.6 L24.2 837.8 L24.2 835.4 L25.2 834.0 L26.5 833.4 L24.2 831.4 L25.7 829.5 L24.0 829.3 L25.5 827.1 L26.0 825.7 L30.7 822.8 L33.9 821.6 L35.4 820.6 L31.2 817.1 L34.4 817.1 L35.6 816.5 L33.9 813.9 L35.9 811.4 L36.9 810.0 L35.2 808.3 L33.2 807.9 L33.2 806.1 L35.6 805.0 L37.6 801.9 L39.9 801.1 L41.1 802.3 L41.8 800.3 L43.6 798.0 L45.6 798.0 L47.1 796.1 L46.3 787.4 L49.3 788.4 L51.8 784.7 L55.7 783.4 L51.8 780.5 L50.8 775.9 L50.8 773.4 L47.3 772.1 L45.3 769.6 L48.3 768.7 L46.8 766.2 L51.3 763.6 L52.5 760.5 L50.3 758.6 L53.0 756.6 L55.5 756.8 L58.0 754.9 L59.2 753.2 L57.7 750.2 L61.7 752.4 L61.7 750.7 L62.7 748.7 L59.9 746.8 L62.2 746.2 L59.9 744.0 L59.9 741.9 L60.9 740.2 L59.2 739.3 L63.9 739.9 L67.1 736.3 L67.4 734.5 L66.1 733.2 L65.1 727.6 L65.9 725.0 L64.4 722.6 L62.7 722.0 L61.4 720.7 L65.9 719.3 L67.4 716.7 L158.7 716.6Z"/>
+<path class="p" data-n="Tierra del Fuego" data-on="0" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Tierra del Fuego. Sin presencia registrada." d="M135.9 907.5 L136.5 908.6 L138.6 910.7 L140.6 913.3 L143.1 915.7 L143.7 917.2 L145.1 921.8 L143.6 918.9 L143.5 917.6 L142.5 917.3 L140.4 918.0 L138.6 920.2 L137.0 921.8 L136.5 923.7 L138.0 925.1 L139.6 926.0 L141.2 926.4 L144.1 926.6 L145.1 926.2 L146.7 926.9 L147.4 928.2 L147.9 929.9 L148.7 931.5 L148.7 933.2 L150.9 935.5 L153.3 937.4 L156.5 940.0 L159.9 941.7 L159.1 942.0 L159.3 942.8 L159.7 943.9 L160.7 944.2 L161.9 944.9 L161.8 945.3 L162.9 945.8 L164.3 946.3 L164.5 947.5 L166.6 948.1 L168.5 949.4 L169.6 950.0 L170.4 949.6 L171.8 950.4 L173.2 951.4 L173.8 952.2 L175.7 952.6 L177.5 953.0 L178.7 954.2 L179.4 955.6 L181.1 956.5 L182.4 957.6 L183.2 958.7 L184.1 959.8 L184.9 960.0 L186.1 959.8 L187.3 960.5 L190.4 961.8 L193.5 962.6 L197.2 963.8 L198.5 964.5 L200.6 964.5 L202.3 965.1 L203.3 964.8 L204.4 964.4 L205.3 965.1 L206.4 964.5 L207.4 964.1 L207.7 965.0 L208.5 964.3 L209.8 964.0 L210.8 964.0 L212.1 963.8 L211.6 965.0 L212.9 964.4 L214.4 964.7 L213.1 965.6 L212.7 966.4 L212.4 967.9 L212.5 968.6 L211.3 968.7 L212.2 969.6 L210.6 969.9 L210.4 970.8 L209.5 972.0 L208.3 972.8 L207.5 972.0 L207.0 971.5 L206.4 971.1 L205.7 971.4 L205.8 972.5 L204.9 972.8 L204.1 972.9 L203.2 973.2 L202.3 973.5 L201.1 972.8 L200.6 972.1 L199.6 971.7 L198.6 971.8 L197.9 971.5 L196.6 971.8 L195.3 971.6 L193.8 971.8 L194.2 972.2 L195.5 972.9 L195.0 973.6 L192.7 974.3 L190.9 974.2 L189.7 974.0 L188.1 974.2 L187.2 974.0 L186.5 974.2 L186.2 974.8 L186.0 975.9 L184.6 975.7 L182.7 976.0 L179.2 974.7 L177.5 973.5 L175.8 972.9 L174.2 972.8 L171.3 972.3 L169.1 971.5 L167.0 970.9 L165.5 970.8 L164.0 970.8 L162.9 971.0 L162.7 972.0 L160.8 971.8 L160.3 971.1 L161.2 970.9 L161.9 970.4 L161.2 970.3 L159.7 970.5 L158.2 971.1 L156.4 971.0 L154.7 970.7 L152.9 970.5 L150.3 970.3 L148.5 969.8 L146.4 969.4 L144.6 968.9 L142.7 968.9 L143.0 969.4 L144.0 969.9 L144.1 970.2 L143.0 970.0 L142.3 969.7 L141.7 969.4 L141.0 970.0 L140.0 970.3 L138.1 970.2 L137.3 969.9 L136.8 970.3 L136.8 970.8 L135.9 971.8 L135.9 907.5Z"/>
+<path class="p on" data-n="Buenos Aires" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Buenos Aires. Con presencia de El Eje." d="M267.1 574.3 L266.8 573.0 L266.2 572.4 L265.8 571.6 L265.5 571.2 L265.0 570.5 L264.2 569.9 L264.0 569.3 L263.6 569.1 L263.2 568.4 L262.5 567.9 L261.6 567.7 L261.3 567.1 L260.2 566.9 L259.2 566.2 L258.6 566.0 L258.3 565.7 L257.4 565.7 L256.5 565.7 L255.9 565.9 L255.6 565.7 L255.6 565.4 L255.2 565.3 L254.4 565.5 L254.1 565.7 L254.2 565.3 L254.1 565.1 L253.8 565.4 L253.8 560.3 L253.7 552.7 L253.7 543.5 L253.7 523.9 L253.4 384.4 L276.7 384.3 L290.9 383.9 L309.5 361.4 L311.3 360.9 L315.2 361.4 L318.4 363.3 L320.7 360.7 L322.4 355.9 L324.4 353.6 L324.5 352.8 L327.1 355.2 L330.0 358.3 L332.6 359.4 L334.3 360.2 L334.4 361.5 L335.4 362.1 L336.5 362.0 L337.5 362.3 L338.2 362.8 L338.6 363.5 L339.0 364.3 L339.5 363.7 L340.6 363.5 L341.5 363.2 L342.1 364.5 L342.9 365.6 L344.8 365.6 L346.8 365.5 L347.2 366.2 L347.3 367.9 L348.6 367.8 L349.3 368.7 L349.8 368.9 L351.3 368.5 L351.9 368.9 L352.6 368.7 L353.1 369.6 L354.0 369.7 L354.9 370.3 L355.4 371.2 L356.3 371.9 L357.6 371.7 L358.4 371.8 L358.7 372.3 L359.3 373.3 L359.8 374.0 L360.5 374.3 L361.8 374.2 L364.2 373.4 L365.5 373.2 L366.5 373.6 L367.0 374.3 L367.0 375.4 L367.0 376.4 L366.7 377.5 L366.5 378.3 L367.0 378.7 L367.2 379.2 L366.5 379.8 L365.8 380.6 L364.6 381.0 L364.1 381.1 L364.4 381.6 L364.9 382.7 L364.9 383.9 L364.7 384.7 L364.1 385.3 L363.9 386.2 L364.3 387.1 L364.9 388.5 L366.0 389.4 L367.0 389.6 L367.6 391.8 L369.3 393.2 L371.1 394.4 L372.6 394.8 L375.0 395.8 L376.6 397.2 L377.9 397.0 L379.5 398.2 L382.1 400.2 L384.1 401.5 L386.1 402.8 L390.0 406.6 L392.1 409.2 L393.4 411.0 L394.5 413.7 L394.8 414.9 L392.6 418.2 L390.0 422.1 L389.1 425.1 L388.8 427.2 L389.1 428.8 L389.3 429.7 L390.3 432.2 L391.3 433.8 L394.5 438.1 L397.9 440.2 L400.4 440.1 L402.5 440.1 L403.0 439.2 L403.7 439.6 L404.7 444.4 L405.1 455.4 L403.6 458.3 L397.6 467.9 L394.8 473.5 L386.8 482.0 L385.9 485.2 L385.6 487.6 L385.7 489.3 L385.4 490.6 L384.5 491.2 L383.9 491.8 L380.2 494.9 L378.2 496.1 L370.8 500.0 L363.2 503.2 L350.2 507.7 L339.5 510.0 L334.8 511.4 L310.4 515.8 L294.5 516.4 L292.8 516.3 L291.8 515.6 L291.7 515.4 L290.3 515.6 L289.4 516.2 L288.1 515.7 L287.7 515.4 L287.0 515.5 L285.0 514.8 L283.6 514.2 L282.9 513.6 L282.4 513.0 L281.9 511.6 L280.9 510.8 L279.7 510.4 L279.2 510.4 L278.7 510.4 L278.1 510.2 L278.0 509.8 L278.0 509.3 L277.6 509.1 L277.8 508.9 L277.0 508.3 L276.6 508.4 L276.4 508.8 L276.1 509.1 L275.6 508.8 L275.1 508.9 L274.3 509.1 L273.6 508.9 L273.6 508.4 L273.5 508.3 L273.2 508.5 L273.2 508.9 L272.8 509.0 L273.0 509.3 L272.8 509.8 L272.4 510.2 L272.9 510.6 L273.2 511.2 L274.0 511.4 L274.9 511.4 L275.8 511.2 L276.1 511.4 L276.1 511.8 L276.7 512.2 L277.4 512.0 L277.1 512.6 L277.4 513.1 L277.6 513.6 L277.5 514.2 L277.2 514.9 L277.5 515.5 L277.8 516.2 L277.9 516.5 L278.1 517.3 L278.0 517.9 L277.3 518.7 L276.9 519.6 L277.2 520.1 L277.2 520.9 L277.6 522.0 L278.5 523.1 L279.0 523.1 L279.7 523.5 L278.5 523.4 L277.8 523.6 L277.6 523.9 L277.9 524.3 L280.4 524.4 L282.9 525.2 L283.9 526.1 L284.7 526.7 L284.7 527.3 L284.2 527.7 L282.5 527.2 L281.3 525.7 L279.8 524.9 L278.5 525.1 L278.4 525.7 L279.5 526.6 L280.5 527.3 L281.9 528.4 L283.6 529.0 L283.9 529.3 L282.7 532.0 L282.1 535.9 L282.0 537.1 L282.6 536.5 L282.4 538.4 L282.3 540.5 L282.2 541.0 L281.3 541.6 L280.7 541.0 L279.5 540.9 L278.2 541.5 L277.6 542.3 L277.2 546.1 L277.2 548.2 L277.5 549.3 L277.6 550.1 L277.1 550.9 L275.7 551.8 L274.9 552.0 L274.0 554.0 L274.6 556.0 L275.5 557.6 L276.0 558.9 L277.6 559.7 L278.7 560.5 L280.0 561.2 L281.0 561.7 L281.1 563.0 L280.0 564.6 L278.7 567.6 L277.8 570.1 L274.7 571.6 L270.6 573.5 L268.8 574.4 L267.9 574.6 L267.1 574.3Z"/>
+<path class="p on" data-n="Chaco" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Chaco. Con presencia de El Eje." d="M277.1 89.3 L280.5 91.2 L280.7 92.2 L282.0 93.2 L282.8 92.6 L283.4 93.5 L285.2 93.6 L287.1 94.8 L287.3 96.1 L289.0 96.1 L290.3 95.9 L291.7 96.9 L291.6 98.1 L291.7 99.1 L292.8 99.5 L294.4 99.6 L296.6 104.2 L298.9 104.6 L301.3 105.2 L303.1 105.9 L304.6 109.2 L304.6 110.6 L309.4 115.8 L312.5 117.6 L314.1 118.5 L315.6 120.2 L318.1 120.8 L320.1 123.2 L321.5 125.3 L323.2 127.6 L324.6 129.7 L325.4 130.3 L325.1 131.0 L324.8 131.8 L325.6 133.5 L326.3 133.8 L328.2 135.1 L329.8 136.4 L331.7 137.8 L332.7 138.9 L333.7 140.2 L335.2 141.8 L336.3 143.7 L337.0 145.0 L337.2 146.3 L337.3 147.3 L337.7 148.3 L339.4 148.1 L341.1 148.8 L342.4 148.7 L343.7 149.8 L343.6 150.9 L344.1 152.1 L344.2 154.0 L345.3 154.0 L346.7 154.2 L348.3 153.6 L348.9 152.6 L349.9 153.5 L350.7 154.5 L351.5 155.2 L352.4 155.0 L353.5 155.8 L354.4 156.9 L355.1 157.6 L356.0 158.5 L356.8 159.6 L357.2 159.0 L358.0 159.9 L358.0 160.8 L358.2 161.3 L358.3 161.6 L359.1 161.1 L359.7 161.5 L359.8 162.3 L360.1 162.9 L360.6 163.4 L361.7 164.0 L362.3 164.2 L362.3 164.6 L362.8 165.4 L363.5 165.6 L364.1 166.4 L364.2 167.5 L365.1 168.0 L365.8 168.2 L366.7 168.6 L366.9 169.3 L366.2 170.0 L365.2 170.6 L364.8 170.8 L363.7 170.7 L364.4 172.4 L364.3 173.4 L364.1 172.8 L363.6 172.9 L363.7 174.1 L363.8 174.7 L363.4 174.7 L362.8 174.1 L362.6 175.7 L361.6 176.0 L360.5 176.7 L360.3 178.0 L360.4 178.8 L361.4 179.3 L361.7 179.7 L361.8 180.1 L361.7 180.5 L361.5 180.8 L361.4 181.1 L361.5 181.4 L362.1 181.7 L360.8 182.3 L357.7 183.5 L355.6 186.6 L354.9 189.9 L356.1 192.3 L356.9 194.7 L356.4 197.7 L356.0 199.5 L356.5 200.2 L356.2 200.9 L355.9 201.8 L354.5 201.4 L345.1 201.4 L315.5 201.5 L291.4 201.4 L291.3 188.5 L291.2 152.0 L291.3 134.2 L271.6 134.2 L252.9 134.1 L265.4 115.6 L274.2 102.6 L277.1 98.2 L277.1 90.2 L277.1 89.3Z"/>
+<path class="p on" data-n="Córdoba" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Córdoba. Con presencia de El Eje." d="M263.7 384.4 L253.3 383.6 L253.3 401.7 L215.1 401.5 L213.4 350.2 L215.6 348.0 L216.8 344.6 L217.6 341.8 L217.8 338.5 L218.6 335.0 L219.2 332.6 L220.5 331.9 L219.8 329.9 L218.9 327.3 L218.7 325.4 L218.7 324.2 L212.7 325.3 L212.2 322.9 L211.9 319.3 L210.4 316.9 L207.0 314.6 L204.1 312.8 L200.7 312.9 L200.0 312.8 L199.9 288.2 L207.9 262.0 L213.9 260.3 L218.7 255.7 L217.3 247.4 L221.0 246.0 L232.4 244.3 L240.6 245.7 L240.6 247.5 L242.5 247.8 L243.3 246.1 L244.5 246.4 L244.7 247.5 L245.5 248.5 L247.9 248.7 L250.5 248.7 L251.4 248.7 L251.7 250.8 L252.1 250.6 L252.4 252.6 L267.5 253.2 L266.8 254.5 L267.3 256.0 L268.5 257.5 L269.2 258.5 L270.4 259.6 L271.2 260.3 L272.2 261.3 L271.7 262.9 L271.9 265.1 L272.1 266.2 L273.3 268.1 L274.8 268.2 L277.8 267.9 L280.4 267.7 L281.6 269.2 L282.3 270.4 L282.3 272.3 L282.1 274.0 L281.6 275.8 L288.3 280.1 L282.4 304.9 L281.6 305.1 L279.9 307.4 L279.8 312.2 L280.4 314.0 L281.5 316.0 L280.9 317.8 L280.2 320.0 L281.6 322.0 L283.9 323.7 L285.4 326.9 L286.5 329.7 L286.6 331.4 L287.0 332.2 L286.7 332.5 L286.6 332.8 L286.9 333.1 L287.4 333.0 L287.3 333.5 L287.2 333.7 L286.1 334.6 L286.0 335.5 L286.4 335.6 L287.4 336.0 L288.0 335.9 L288.4 336.8 L289.6 338.5 L289.8 340.0 L289.9 342.2 L289.8 344.5 L288.3 346.9 L287.0 347.5 L282.4 355.2 L274.3 368.4 L269.9 375.9 L266.4 381.7 L264.9 384.4 L263.7 384.4Z"/>
+<path class="p on" data-n="Corrientes" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Corrientes. Con presencia de El Eje." d="M378.9 279.9 L377.1 277.7 L374.7 275.4 L373.1 271.7 L371.1 268.2 L370.4 266.3 L368.6 265.4 L364.5 264.7 L363.1 263.6 L359.6 263.7 L356.9 264.9 L355.7 266.4 L353.8 265.8 L352.8 264.9 L350.5 265.9 L349.1 267.4 L347.6 268.7 L346.0 269.6 L343.9 268.5 L342.5 267.9 L340.5 268.6 L339.6 271.6 L337.3 268.3 L338.0 265.4 L339.0 261.7 L340.3 258.4 L337.4 254.2 L338.6 252.1 L338.0 249.4 L339.1 246.9 L338.4 245.4 L339.3 243.1 L338.8 241.7 L340.0 240.1 L341.0 238.9 L341.0 237.6 L344.6 235.2 L343.7 233.9 L348.3 230.5 L347.8 228.2 L348.8 226.2 L349.8 222.2 L350.9 221.0 L349.8 217.1 L350.8 215.9 L351.8 214.6 L351.2 213.7 L350.7 210.8 L349.9 208.5 L350.4 206.9 L351.9 205.4 L354.0 204.8 L354.5 203.4 L355.4 201.9 L356.5 200.2 L356.9 198.3 L356.7 196.0 L356.2 193.4 L355.6 190.9 L355.0 189.5 L355.3 188.3 L356.0 186.3 L358.7 183.1 L360.0 182.2 L361.6 181.1 L363.2 180.6 L365.3 180.6 L368.3 180.6 L369.4 180.6 L371.4 180.7 L373.8 179.7 L376.2 180.3 L378.7 182.0 L380.8 182.1 L383.8 183.4 L385.9 184.6 L388.1 184.6 L390.6 184.9 L392.9 186.0 L395.5 187.1 L397.8 187.8 L400.4 189.5 L402.5 189.1 L404.2 188.3 L404.6 187.0 L404.8 185.7 L407.3 185.0 L409.2 185.0 L410.4 185.5 L413.1 184.3 L415.4 182.9 L417.8 181.8 L418.9 181.7 L419.6 182.0 L419.4 182.7 L419.4 183.2 L419.4 184.2 L419.4 184.7 L419.1 185.0 L418.9 185.5 L419.1 186.3 L419.8 187.4 L420.7 188.3 L424.1 195.8 L424.0 196.3 L423.9 197.3 L424.1 197.6 L424.1 198.1 L424.5 198.9 L424.5 199.7 L424.5 200.4 L425.2 201.5 L425.5 202.3 L425.5 202.7 L425.6 203.2 L425.8 203.7 L426.1 203.3 L426.5 203.2 L426.5 203.6 L426.8 203.9 L427.4 204.5 L428.2 204.9 L428.7 205.6 L429.0 205.8 L428.6 206.3 L428.1 206.7 L427.1 207.6 L425.5 208.4 L425.1 208.8 L425.8 209.4 L426.4 209.9 L427.0 210.3 L427.7 210.9 L427.8 211.5 L427.5 212.3 L427.2 213.4 L426.9 213.8 L426.7 213.3 L426.4 212.6 L426.1 212.1 L425.1 211.9 L424.2 211.9 L423.6 211.6 L423.0 211.7 L422.7 212.1 L422.4 212.8 L422.5 213.5 L422.6 214.1 L422.7 214.8 L422.8 215.3 L421.7 215.7 L420.9 215.7 L420.2 215.9 L419.4 217.3 L419.6 217.6 L420.3 218.1 L418.3 220.3 L417.5 221.4 L416.0 222.4 L415.4 223.2 L414.5 223.5 L413.6 224.8 L413.4 226.6 L413.0 228.2 L412.0 229.1 L410.3 229.9 L410.4 232.3 L409.2 233.0 L407.9 233.2 L407.2 233.4 L405.9 234.9 L404.9 239.3 L404.3 240.7 L403.2 240.9 L402.6 242.2 L401.7 243.8 L400.1 244.9 L398.9 247.1 L397.5 249.4 L395.5 251.7 L393.5 252.4 L391.6 252.8 L390.6 253.9 L390.4 255.4 L390.6 256.2 L390.3 257.5 L390.3 258.5 L389.5 259.1 L388.2 260.2 L387.2 260.9 L385.6 262.2 L384.1 264.1 L382.9 265.5 L383.0 267.1 L382.9 268.3 L381.2 269.8 L380.4 270.9 L379.3 272.0 L377.7 272.8 L378.3 275.9 L379.4 277.4 L379.4 278.5 L378.9 279.9Z"/>
+<path class="p on" data-n="Entre Ríos" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Entre Ríos. Con presencia de El Eje." d="M337.9 268.3 L338.6 269.8 L339.8 271.5 L340.0 269.0 L341.0 268.2 L342.4 267.9 L343.6 267.7 L345.0 268.3 L346.1 269.2 L347.0 269.2 L347.8 268.6 L348.8 267.8 L349.9 267.0 L349.9 266.3 L350.4 265.8 L351.3 265.5 L352.3 265.1 L353.3 264.9 L354.1 265.8 L355.7 266.2 L357.1 264.7 L358.5 264.4 L360.2 263.4 L361.2 263.3 L362.8 263.4 L363.4 264.1 L364.1 264.5 L365.0 264.9 L365.7 265.2 L366.5 265.8 L367.4 266.3 L368.1 265.9 L369.3 265.9 L370.1 266.6 L370.9 267.1 L371.4 268.2 L371.6 270.2 L372.6 271.2 L373.3 271.9 L373.7 273.2 L374.0 274.4 L374.2 275.3 L375.2 275.9 L376.7 277.0 L377.4 278.1 L378.9 279.3 L379.5 283.4 L379.3 285.4 L378.1 284.7 L377.2 285.4 L377.7 286.3 L378.2 287.5 L378.3 288.6 L378.2 289.6 L377.4 289.4 L377.3 290.4 L377.1 291.5 L377.2 293.3 L377.2 294.4 L376.6 295.9 L375.0 298.4 L374.2 299.7 L373.5 300.5 L374.3 301.8 L375.6 303.0 L375.9 305.1 L375.2 305.7 L375.0 306.9 L374.2 308.2 L373.8 310.0 L373.2 311.3 L371.6 310.8 L370.9 311.7 L370.7 313.0 L371.4 314.5 L371.9 316.0 L372.0 317.7 L371.6 319.0 L371.1 320.2 L372.1 322.4 L373.0 324.0 L371.9 325.4 L371.6 326.8 L371.0 328.2 L371.0 330.1 L371.2 332.1 L371.9 334.8 L371.7 336.2 L372.1 337.9 L372.4 339.3 L372.5 340.9 L372.6 341.7 L373.2 343.7 L373.5 344.5 L372.5 345.0 L370.7 347.0 L369.3 347.1 L368.4 347.1 L367.2 347.3 L366.4 347.5 L366.4 351.5 L365.7 353.8 L364.3 356.9 L364.2 361.1 L364.2 365.4 L364.8 369.3 L366.5 373.2 L364.3 373.5 L362.4 374.0 L361.1 374.4 L360.0 374.3 L359.0 372.7 L358.6 371.9 L357.5 372.2 L356.6 372.4 L355.9 371.1 L354.8 370.3 L353.9 369.9 L353.5 369.2 L353.0 368.5 L351.9 368.9 L349.9 368.5 L348.4 367.7 L347.3 367.7 L347.2 365.6 L343.1 365.5 L341.5 363.1 L339.3 363.8 L338.0 362.6 L336.7 361.8 L336.4 362.4 L334.6 361.4 L334.4 360.3 L331.2 358.4 L327.7 355.8 L324.9 353.0 L324.0 351.9 L323.4 351.2 L323.9 350.3 L323.4 349.2 L322.5 349.6 L321.1 350.0 L320.2 349.6 L318.9 348.2 L317.6 346.5 L316.2 343.7 L314.7 341.7 L315.6 339.7 L313.9 338.4 L314.2 336.2 L313.2 333.9 L312.6 330.9 L313.5 329.0 L313.7 327.3 L313.4 325.7 L314.5 324.8 L315.1 324.1 L315.0 322.4 L314.1 320.9 L315.0 318.9 L314.4 314.4 L315.6 309.3 L317.0 307.4 L318.9 307.3 L321.5 305.7 L322.3 304.5 L322.0 303.1 L324.6 302.2 L326.1 300.3 L327.6 298.7 L328.2 297.5 L327.4 295.9 L330.1 293.9 L331.3 291.0 L333.3 287.8 L334.4 285.3 L336.4 282.4 L337.4 280.5 L338.3 278.4 L338.2 277.0 L337.7 273.1 L337.3 271.7 L336.5 271.1 L337.9 268.3Z"/>
+<path class="p on" data-n="Jujuy" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Jujuy. Con presencia de El Eje." d="M168.5 79.1 L173.7 87.2 L174.4 85.1 L175.7 88.9 L178.4 90.6 L183.1 91.5 L184.9 90.9 L186.3 88.3 L186.8 86.9 L185.8 85.1 L187.1 82.6 L185.8 78.0 L188.1 76.2 L188.8 73.3 L190.8 70.7 L193.5 71.0 L195.0 72.2 L195.5 74.8 L195.0 76.8 L194.5 79.7 L194.8 84.3 L197.2 87.2 L199.0 87.2 L200.7 89.7 L202.2 93.2 L202.2 94.9 L202.7 96.3 L204.9 98.3 L206.2 98.9 L207.7 98.9 L209.1 100.1 L210.6 100.3 L212.6 100.3 L215.1 102.6 L218.1 104.6 L219.8 104.4 L219.6 101.5 L220.1 99.2 L221.3 99.8 L222.3 101.2 L223.3 102.9 L225.3 103.2 L227.5 103.2 L228.0 100.6 L230.0 99.2 L231.2 99.2 L232.4 99.2 L233.9 97.5 L236.4 95.2 L236.4 90.6 L236.7 83.1 L236.7 77.4 L236.4 73.3 L234.7 72.8 L232.2 73.3 L230.7 74.2 L230.7 76.2 L229.0 75.1 L227.2 73.1 L225.5 71.6 L223.5 71.9 L221.5 72.2 L220.1 70.7 L219.6 68.7 L219.3 66.7 L217.6 65.8 L216.1 64.7 L215.3 62.7 L215.8 60.9 L214.4 58.3 L212.1 56.6 L211.1 54.8 L209.9 51.4 L211.6 49.6 L209.1 47.3 L210.1 44.4 L210.4 41.5 L212.1 38.9 L211.9 36.8 L212.4 34.8 L212.9 33.0 L211.1 32.5 L209.4 33.3 L202.2 32.8 L200.0 33.0 L198.0 30.7 L196.3 28.4 L194.5 27.8 L193.0 27.8 L193.8 24.9 L190.3 24.0 L188.8 26.3 L188.8 30.1 L187.8 32.8 L185.6 33.6 L182.9 35.1 L180.4 35.4 L178.7 36.0 L177.2 37.1 L177.2 39.7 L176.7 41.8 L175.2 42.4 L173.7 43.5 L172.0 44.7 L171.7 46.7 L170.5 49.3 L168.7 51.4 L167.8 52.8 L169.2 54.0 L170.7 54.8 L172.2 56.0 L172.7 57.7 L167.3 75.9 L167.0 78.2 L168.5 79.1Z"/>
+<path class="p on" data-n="Mendoza" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Mendoza. Con presencia de El Eje." d="M94.6 435.0 L95.6 432.4 L96.1 430.9 L96.4 428.1 L94.1 426.8 L98.6 424.5 L96.4 423.3 L95.1 421.5 L95.9 418.4 L94.6 416.4 L94.9 413.3 L94.6 411.5 L92.9 410.7 L91.9 408.9 L91.4 407.1 L94.4 407.1 L96.6 405.1 L96.4 403.0 L96.6 399.4 L99.6 396.3 L98.1 395.3 L98.6 392.9 L99.6 389.6 L100.8 388.3 L102.3 387.0 L103.8 385.7 L104.1 382.6 L103.3 380.2 L106.0 381.0 L107.0 380.8 L109.0 378.9 L108.8 377.4 L108.5 375.3 L108.5 373.2 L108.3 371.1 L106.5 371.6 L107.8 369.6 L106.8 368.0 L107.8 364.3 L106.8 362.0 L106.8 359.3 L108.0 357.3 L109.5 355.2 L109.5 353.0 L108.0 350.9 L106.8 350.4 L105.5 351.2 L105.0 352.8 L103.1 352.3 L103.1 350.9 L103.1 349.4 L103.1 347.8 L103.1 345.7 L104.3 344.6 L105.5 343.0 L105.0 341.7 L103.6 339.9 L102.3 338.3 L101.3 336.4 L100.6 334.6 L100.8 332.7 L102.8 333.5 L103.6 331.4 L104.8 330.1 L106.3 331.9 L107.8 331.7 L109.5 330.3 L111.5 329.3 L110.3 326.6 L111.0 325.0 L112.7 323.2 L113.7 321.3 L114.5 319.4 L116.2 317.6 L118.2 317.6 L119.7 319.4 L120.7 317.3 L123.4 316.2 L125.6 317.6 L126.4 318.6 L128.8 318.9 L128.8 324.8 L133.1 325.3 L139.0 322.4 L139.5 320.0 L143.5 318.9 L145.0 320.0 L147.4 318.4 L149.2 317.8 L149.7 319.7 L151.6 321.0 L153.9 322.1 L155.1 321.8 L156.8 322.6 L159.1 322.4 L160.6 322.4 L160.6 323.7 L161.3 325.3 L162.8 325.3 L164.5 325.0 L164.7 327.0 L165.8 329.9 L165.4 330.7 L166.3 331.5 L165.6 332.7 L167.1 333.1 L166.3 334.8 L168.6 336.4 L168.0 339.7 L166.5 341.1 L168.4 348.6 L168.1 350.7 L168.5 356.2 L169.9 359.6 L171.1 362.0 L172.2 363.0 L173.0 364.5 L174.2 366.3 L175.1 367.6 L174.9 368.8 L176.6 368.9 L177.2 369.8 L178.3 370.7 L179.3 371.5 L179.7 372.3 L178.8 373.1 L178.3 375.3 L178.0 377.1 L177.8 379.2 L176.9 379.7 L176.8 381.0 L177.0 382.2 L176.2 383.0 L176.4 384.0 L177.4 384.8 L177.9 386.5 L177.7 387.9 L178.4 390.2 L179.5 391.9 L180.1 393.6 L180.5 394.5 L179.4 394.8 L181.6 395.9 L183.1 400.2 L182.5 401.3 L183.0 403.1 L183.2 404.2 L183.7 405.8 L183.7 407.6 L184.2 408.9 L183.1 410.0 L184.1 410.9 L183.0 411.8 L182.6 413.2 L182.6 414.4 L183.4 415.9 L183.2 416.9 L182.7 418.4 L182.3 418.9 L182.1 419.8 L182.0 421.1 L181.6 423.5 L181.1 425.7 L180.8 428.0 L180.4 429.9 L143.0 429.4 L143.2 438.0 L144.0 475.5 L141.5 475.7 L138.8 474.5 L136.5 472.5 L135.3 471.5 L132.8 469.8 L130.8 469.8 L129.3 470.3 L126.9 470.8 L127.1 467.7 L125.9 465.2 L122.4 463.2 L119.2 463.7 L116.0 465.7 L114.5 465.5 L113.7 463.7 L110.7 461.5 L110.0 459.7 L110.0 456.7 L104.8 451.4 L101.1 447.4 L100.6 444.9 L99.1 440.8 L97.6 441.3 L95.9 441.8 L95.6 435.5 L94.6 435.0Z"/>
+<path class="p on" data-n="Misiones" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Misiones. Con presencia de El Eje." d="M420.3 182.7 L422.4 182.7 L425.9 186.0 L427.3 183.9 L429.5 182.7 L429.4 181.1 L429.7 179.9 L428.7 178.5 L428.7 176.9 L430.1 177.9 L430.4 175.0 L431.5 176.0 L432.8 176.0 L432.8 173.9 L433.6 172.6 L434.9 171.9 L436.4 171.2 L437.8 171.2 L438.8 171.5 L440.5 170.8 L439.6 169.8 L439.9 168.5 L441.0 167.5 L442.9 166.4 L443.6 166.4 L444.0 165.0 L444.1 163.6 L445.6 162.9 L446.0 163.8 L447.2 162.9 L448.0 161.9 L447.6 160.8 L447.1 160.0 L448.2 158.7 L449.6 157.0 L449.9 154.6 L450.9 152.9 L450.3 151.8 L451.8 150.2 L450.8 148.8 L450.8 148.1 L451.3 146.8 L450.8 145.6 L450.3 144.9 L450.4 143.6 L451.9 143.7 L451.8 142.7 L451.5 142.0 L451.5 141.1 L452.2 139.6 L451.8 138.5 L451.5 137.7 L451.4 136.5 L450.8 135.4 L450.7 134.1 L451.7 134.5 L452.0 133.4 L452.7 132.3 L453.2 132.8 L453.3 133.8 L453.8 132.6 L454.8 133.8 L455.3 135.1 L455.8 135.7 L456.0 133.8 L456.6 132.8 L457.4 132.6 L458.1 131.8 L458.9 131.4 L459.4 132.4 L460.0 132.6 L460.2 131.6 L461.3 132.4 L461.2 131.6 L461.0 130.6 L462.4 130.4 L462.9 129.6 L462.9 131.1 L462.6 132.6 L462.9 133.3 L463.6 132.6 L464.3 131.8 L465.4 132.1 L466.2 134.0 L466.6 134.4 L466.6 133.7 L466.9 133.4 L467.2 133.4 L468.0 133.6 L468.4 134.3 L469.0 135.1 L468.8 135.5 L468.4 136.0 L468.6 136.7 L468.9 137.2 L469.2 138.2 L469.5 139.4 L469.0 139.8 L469.1 140.5 L469.1 141.7 L469.0 142.7 L469.3 143.8 L470.0 144.3 L470.8 145.2 L471.6 145.8 L471.1 146.2 L471.1 147.4 L471.8 147.9 L472.5 148.5 L473.0 149.2 L473.4 149.8 L473.7 150.5 L473.5 151.6 L473.4 152.6 L472.7 153.9 L472.3 154.7 L471.9 155.2 L472.2 156.3 L472.3 157.0 L472.1 157.4 L472.1 157.8 L472.1 158.3 L472.1 158.7 L471.7 158.6 L471.6 158.9 L471.5 159.3 L471.5 160.2 L471.6 160.6 L471.4 161.7 L471.0 162.2 L471.2 163.0 L471.4 163.3 L471.5 163.8 L471.6 164.1 L471.0 164.7 L471.1 165.2 L471.5 165.3 L471.7 165.9 L471.9 166.7 L472.1 167.3 L472.4 168.1 L472.9 168.8 L472.5 168.9 L472.1 169.2 L472.5 169.7 L473.0 169.8 L472.5 170.5 L472.4 171.2 L471.8 171.1 L471.6 171.4 L471.4 172.8 L471.6 173.5 L470.9 173.5 L470.5 173.9 L471.4 175.0 L470.6 174.7 L470.2 174.7 L470.0 175.0 L470.3 175.5 L469.9 175.7 L469.6 175.8 L469.4 176.4 L469.8 177.0 L469.4 177.1 L469.4 177.6 L468.5 176.6 L468.0 176.9 L467.7 177.8 L467.2 177.5 L466.6 177.4 L466.5 178.6 L465.4 178.6 L464.7 180.0 L464.2 180.3 L463.8 181.1 L463.2 181.5 L462.3 181.5 L461.9 181.2 L461.8 180.4 L461.5 180.2 L461.0 180.5 L461.1 181.2 L460.9 181.9 L460.5 182.6 L460.2 183.9 L459.5 184.1 L459.5 184.6 L459.2 185.4 L458.8 185.7 L458.5 185.3 L457.9 184.6 L457.6 184.3 L457.6 184.7 L457.7 185.5 L457.7 186.0 L457.2 186.2 L456.9 185.5 L456.4 184.8 L456.1 184.5 L456.0 184.8 L455.7 184.9 L455.1 184.9 L454.8 185.0 L454.8 185.7 L455.2 186.2 L455.3 186.6 L454.4 186.6 L454.0 186.8 L453.6 187.1 L453.2 186.9 L452.9 186.5 L452.5 185.9 L452.2 186.0 L452.2 186.4 L451.9 187.0 L451.6 188.2 L451.2 188.5 L450.9 188.0 L450.7 187.4 L450.1 187.5 L450.1 188.3 L450.1 189.2 L449.6 188.9 L449.0 188.8 L448.4 188.7 L448.4 189.3 L448.1 189.6 L447.7 189.2 L447.7 188.7 L447.6 188.2 L447.1 188.1 L446.9 188.7 L446.5 189.5 L446.5 190.1 L446.4 191.0 L445.5 190.8 L445.1 190.9 L444.9 192.2 L445.0 193.1 L444.5 194.0 L444.3 194.8 L443.8 195.1 L443.3 194.9 L442.9 195.2 L442.9 195.6 L442.6 195.8 L441.9 195.4 L441.4 195.0 L441.0 195.4 L441.6 196.1 L442.3 197.3 L441.4 197.4 L440.8 197.2 L440.0 198.2 L439.2 197.8 L438.7 197.4 L438.2 197.5 L437.3 198.9 L436.8 199.5 L436.1 199.4 L435.4 199.4 L435.1 200.2 L435.0 200.8 L434.3 200.9 L434.6 201.5 L434.4 202.7 L433.5 202.9 L433.0 203.3 L432.9 204.0 L432.6 204.6 L432.0 203.9 L431.6 203.8 L431.2 204.5 L431.0 205.0 L430.6 205.5 L430.4 206.3 L429.8 206.0 L429.5 205.6 L429.7 205.1 L429.4 204.7 L428.9 205.1 L428.7 205.7 L427.8 204.6 L426.7 203.6 L426.4 203.1 L426.0 203.8 L425.3 201.6 L424.7 200.5 L424.5 199.2 L424.3 198.4 L423.9 196.9 L424.0 195.8 L422.6 192.5 L421.7 190.6 L420.7 188.2 L419.9 187.4 L419.1 186.2 L419.0 185.3 L419.4 184.8 L419.4 183.6 L419.4 182.5 L420.3 182.7Z"/>
+<path class="p on" data-n="Neuquén" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Neuquén. Con presencia de El Eje." d="M143.7 475.5 L143.5 506.9 L147.2 511.1 L149.7 514.5 L145.2 516.5 L140.7 517.4 L138.3 518.4 L136.0 523.1 L133.1 524.3 L128.8 529.6 L122.4 533.3 L121.2 535.9 L117.2 539.1 L109.0 542.5 L105.0 544.4 L105.5 549.2 L102.6 552.1 L102.6 555.4 L100.8 558.1 L101.3 560.0 L99.6 560.0 L97.9 559.5 L95.9 560.5 L91.9 559.5 L89.9 562.4 L87.2 561.9 L84.0 562.4 L81.5 564.0 L81.7 566.0 L79.5 566.9 L79.8 568.1 L80.5 569.8 L80.8 571.4 L80.8 572.6 L80.0 573.8 L77.8 575.5 L74.3 576.9 L72.6 575.2 L70.6 574.3 L68.4 574.3 L65.4 574.0 L62.4 573.8 L61.9 572.6 L62.9 570.7 L61.2 568.8 L60.4 566.4 L61.2 564.3 L63.2 563.3 L63.9 561.9 L61.9 561.4 L62.4 559.5 L63.2 557.1 L65.4 557.1 L66.4 556.4 L67.4 554.7 L66.4 552.8 L64.9 551.6 L64.6 553.0 L63.7 551.6 L63.2 549.4 L63.4 547.0 L66.4 548.0 L68.1 547.8 L66.6 546.3 L66.4 545.1 L67.6 543.4 L68.4 541.7 L68.4 540.0 L66.6 539.6 L66.1 537.9 L67.9 536.2 L66.1 534.7 L64.9 531.8 L68.1 533.5 L70.1 535.7 L72.3 534.0 L71.8 532.1 L69.9 531.6 L70.6 529.6 L72.1 527.4 L72.8 526.0 L74.3 524.5 L73.1 523.5 L72.3 521.8 L71.8 518.9 L71.8 516.5 L71.1 514.3 L73.3 513.3 L75.3 512.1 L75.1 509.6 L77.3 511.1 L79.0 509.4 L81.7 509.1 L83.7 508.4 L85.0 507.7 L85.0 505.9 L85.7 503.7 L84.7 501.5 L82.5 500.8 L81.7 498.1 L82.5 495.3 L81.5 493.1 L80.8 491.1 L83.2 490.9 L81.7 489.4 L80.8 487.9 L79.3 486.4 L79.0 484.7 L78.5 483.5 L77.3 483.7 L79.5 481.0 L78.3 479.7 L77.3 478.0 L78.3 476.7 L79.0 474.5 L79.0 472.5 L78.0 470.5 L76.5 469.0 L77.3 467.7 L78.5 466.0 L79.8 464.7 L80.3 463.2 L79.3 461.2 L78.0 458.2 L79.5 458.0 L78.8 456.5 L78.3 454.7 L79.5 451.4 L81.7 450.7 L81.5 448.4 L79.8 446.9 L81.0 445.9 L82.2 443.9 L85.0 441.8 L87.9 443.1 L89.2 442.1 L88.2 440.3 L88.2 438.3 L90.7 436.2 L92.4 434.7 L94.1 436.2 L95.1 434.5 L95.9 435.7 L95.9 438.3 L95.9 441.1 L97.9 440.3 L99.1 440.3 L99.6 442.1 L100.1 445.1 L102.6 448.1 L104.8 451.2 L106.8 453.4 L108.5 455.7 L110.3 457.5 L109.8 459.2 L109.8 461.2 L113.2 462.7 L114.7 465.0 L120.4 463.2 L123.1 464.0 L126.1 466.0 L125.9 468.3 L125.9 470.3 L128.1 470.8 L130.8 469.8 L133.3 470.5 L134.5 471.7 L136.5 472.0 L138.8 473.5 L140.7 475.2 L143.7 475.5Z"/>
+<path class="p on" data-n="Río Negro" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Río Negro. Con presencia de El Eje." d="M143.7 475.0 L154.4 477.5 L156.6 483.0 L155.4 485.2 L152.6 484.9 L152.4 486.7 L153.9 490.1 L156.4 488.9 L157.8 493.4 L164.0 495.8 L168.0 493.4 L171.0 498.6 L175.2 501.3 L181.6 502.7 L179.9 507.2 L185.1 509.6 L189.1 509.9 L191.1 508.6 L193.0 507.7 L195.5 508.1 L197.5 510.1 L199.2 511.3 L201.5 512.1 L203.2 511.3 L204.9 509.6 L208.9 511.6 L211.1 512.6 L213.1 511.3 L213.6 509.1 L219.6 512.1 L223.8 511.3 L227.5 511.6 L231.7 512.8 L234.9 514.8 L240.6 517.7 L243.1 519.2 L245.6 519.4 L245.8 521.6 L247.8 522.1 L250.0 523.3 L252.0 525.0 L253.5 525.5 L254.0 565.7 L257.0 565.2 L260.7 566.2 L264.7 570.0 L267.4 573.3 L263.5 576.2 L261.2 577.6 L258.2 578.3 L254.1 578.1 L249.5 578.0 L245.6 578.1 L243.2 577.7 L241.9 577.2 L240.6 575.5 L238.4 574.6 L238.0 573.3 L237.3 572.9 L236.5 574.2 L233.6 573.0 L230.2 571.2 L227.5 569.6 L224.5 568.6 L222.7 568.2 L220.4 568.8 L219.7 568.0 L222.4 567.3 L221.7 566.1 L220.1 565.6 L218.9 565.8 L219.4 567.0 L217.7 566.7 L215.5 567.5 L214.4 569.6 L213.9 571.8 L213.7 573.6 L213.6 577.4 L214.0 579.4 L214.8 581.4 L215.7 584.3 L216.3 586.3 L217.1 587.6 L217.7 589.9 L216.7 591.2 L216.6 593.1 L216.6 594.3 L216.8 595.6 L217.1 596.9 L216.1 596.9 L216.5 598.1 L216.0 600.1 L216.0 602.0 L64.3 601.7 L64.2 599.1 L63.9 597.9 L64.9 597.0 L64.9 595.4 L63.8 594.6 L63.7 593.3 L63.0 592.7 L62.2 591.3 L63.2 589.6 L62.9 587.8 L62.9 586.2 L61.8 584.1 L61.9 582.1 L61.3 581.0 L62.5 579.7 L61.5 578.3 L62.9 577.1 L63.0 575.7 L62.5 574.6 L62.2 573.8 L65.6 574.3 L68.2 574.7 L69.4 574.3 L70.8 574.6 L72.2 574.9 L73.8 576.4 L76.0 576.5 L78.3 575.5 L78.6 574.6 L79.9 573.9 L79.8 573.3 L80.6 572.9 L81.3 572.3 L80.8 570.4 L80.4 569.2 L79.7 569.0 L79.9 568.3 L79.3 567.6 L79.1 566.9 L79.7 565.8 L81.3 565.9 L82.0 564.4 L82.4 563.6 L83.5 563.0 L84.4 562.8 L85.0 562.1 L86.3 561.8 L87.4 561.5 L89.2 562.0 L90.0 561.8 L90.6 560.8 L92.1 559.6 L92.9 559.3 L94.9 560.2 L97.9 559.3 L99.4 559.7 L100.6 558.8 L100.3 557.4 L102.3 555.7 L102.6 551.6 L105.5 549.4 L104.6 546.6 L104.3 544.6 L107.5 542.2 L112.2 540.8 L116.9 539.1 L119.2 537.1 L122.4 533.3 L126.9 530.6 L130.8 527.2 L133.1 524.0 L135.8 521.8 L138.8 518.2 L142.7 516.5 L145.0 516.0 L147.9 516.0 L149.5 515.7 L145.7 508.6 L143.5 506.9 L143.7 475.0Z"/>
+<path class="p on" data-n="Salta" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Salta. Con presencia de El Eje." d="M140.7 120.0 L150.2 122.3 L161.6 122.9 L173.7 122.6 L180.1 122.0 L181.4 122.9 L184.4 127.2 L182.6 132.8 L180.9 136.5 L176.9 136.5 L176.4 139.6 L176.9 143.3 L180.9 147.0 L183.1 152.9 L186.8 155.7 L186.8 152.6 L190.8 148.4 L194.0 150.1 L200.5 154.3 L201.5 152.4 L201.2 149.8 L202.9 146.4 L204.9 146.7 L207.4 146.7 L209.9 146.1 L211.9 147.6 L212.9 149.8 L216.1 150.9 L217.1 153.8 L220.1 152.9 L222.5 151.5 L224.0 151.5 L226.5 150.4 L229.0 149.2 L231.5 142.7 L234.7 136.5 L239.4 136.5 L239.6 134.3 L252.3 135.7 L260.9 122.0 L276.8 98.1 L277.3 44.4 L276.3 42.4 L275.1 41.5 L272.3 38.6 L269.4 35.4 L266.9 33.3 L266.6 30.4 L261.4 30.1 L247.6 29.8 L247.1 31.6 L246.1 29.3 L241.4 30.4 L239.3 35.1 L237.0 39.4 L236.7 41.2 L235.5 43.2 L234.6 47.0 L234.3 48.3 L233.8 50.9 L233.6 52.4 L233.6 53.7 L232.8 55.1 L232.4 55.9 L232.1 55.0 L232.4 52.8 L232.2 51.1 L231.6 50.1 L230.5 48.9 L230.1 47.9 L229.8 46.4 L230.6 45.0 L229.0 43.4 L228.4 42.2 L227.5 42.2 L227.4 41.0 L227.1 39.9 L226.9 38.6 L228.1 37.6 L226.4 36.2 L225.0 34.8 L223.0 34.4 L221.7 34.6 L221.5 33.3 L220.1 33.0 L218.8 32.8 L217.1 32.2 L215.3 31.9 L213.5 32.0 L212.8 32.9 L212.1 35.9 L211.9 37.0 L211.9 38.2 L212.0 38.8 L211.3 39.5 L210.9 40.5 L210.4 42.1 L210.0 43.7 L209.3 44.6 L209.1 46.0 L209.2 47.2 L209.8 47.7 L210.9 48.4 L210.7 49.8 L210.1 50.8 L210.5 51.2 L210.5 52.1 L210.8 52.6 L210.8 53.7 L210.8 54.3 L211.0 55.1 L212.2 55.9 L212.7 56.9 L212.9 57.4 L213.7 58.2 L214.8 59.0 L215.3 59.5 L215.7 60.5 L215.7 61.1 L215.7 62.1 L215.7 62.4 L216.1 62.7 L216.0 64.8 L216.6 65.8 L217.4 66.3 L218.1 66.6 L218.4 66.2 L218.9 66.6 L219.5 67.8 L219.4 68.3 L219.5 69.2 L219.4 70.1 L219.6 70.6 L219.9 71.2 L220.2 71.5 L220.2 71.9 L220.5 72.3 L221.4 72.2 L222.3 72.1 L223.1 71.9 L223.8 71.7 L224.5 71.4 L224.6 72.0 L225.8 72.3 L226.2 72.6 L226.5 72.8 L226.9 73.0 L227.7 73.6 L228.3 74.1 L228.5 74.4 L229.0 75.1 L229.5 76.3 L229.8 76.4 L230.1 76.5 L230.5 76.4 L230.9 75.8 L231.0 74.9 L230.8 74.3 L231.1 74.2 L231.4 74.0 L231.6 73.6 L232.6 73.2 L236.4 72.9 L236.2 90.5 L236.2 93.6 L234.3 97.2 L232.9 98.8 L231.6 99.3 L231.1 98.5 L230.1 98.5 L229.1 99.5 L228.7 100.2 L227.6 101.2 L227.0 103.1 L226.2 103.5 L225.4 104.1 L224.6 104.1 L223.3 101.6 L222.2 100.5 L220.8 99.8 L220.1 100.5 L219.9 101.1 L219.4 102.5 L219.4 104.1 L217.4 103.9 L215.2 102.9 L213.6 101.5 L212.6 100.3 L211.6 100.1 L210.8 100.6 L210.0 101.2 L209.3 101.1 L209.3 100.2 L208.6 99.6 L207.9 100.1 L207.3 99.8 L206.5 98.9 L206.0 99.5 L205.1 99.5 L204.1 98.1 L202.9 97.5 L202.2 96.6 L202.1 95.3 L201.2 93.0 L201.0 91.5 L200.7 90.2 L199.6 87.7 L197.5 86.9 L197.0 87.1 L196.2 87.0 L195.8 86.9 L195.9 86.4 L195.9 85.9 L195.5 86.0 L195.1 86.0 L194.6 85.2 L194.2 83.9 L194.2 82.3 L194.4 80.4 L194.3 78.8 L194.5 76.8 L194.8 75.5 L194.9 74.4 L194.7 73.3 L193.8 72.3 L192.7 71.2 L191.4 70.5 L190.7 70.2 L190.5 71.0 L189.9 71.8 L189.1 72.7 L188.6 74.1 L187.8 74.8 L187.5 75.1 L187.5 75.7 L187.3 76.8 L186.8 77.4 L186.2 78.2 L186.3 79.5 L186.3 81.1 L186.8 82.1 L186.3 81.8 L186.2 82.6 L186.3 83.5 L186.4 85.4 L186.5 86.8 L187.2 86.5 L186.8 87.6 L186.6 87.9 L186.2 89.3 L186.3 89.7 L186.3 90.2 L185.9 90.6 L185.6 90.4 L185.2 90.2 L185.2 91.0 L185.2 91.5 L184.7 92.0 L184.2 91.7 L183.9 92.1 L183.9 92.8 L183.3 92.7 L182.8 92.9 L182.2 92.5 L181.8 92.3 L180.8 91.9 L179.9 91.5 L179.2 91.0 L178.7 90.7 L178.2 90.1 L178.0 89.5 L177.4 89.5 L176.5 89.7 L175.7 89.2 L175.2 88.4 L175.1 87.6 L174.8 86.9 L174.8 86.2 L174.4 85.9 L173.8 86.2 L173.6 86.6 L172.8 85.4 L171.7 84.1 L171.4 82.9 L170.4 81.7 L167.3 78.2 L164.7 88.0 L143.7 98.3 L143.6 99.1 L143.3 99.8 L142.9 100.0 L142.7 100.9 L142.5 101.1 L141.9 101.1 L141.0 101.1 L140.6 100.8 L140.5 101.8 L140.1 103.1 L139.8 103.9 L139.9 104.5 L139.4 104.4 L139.1 104.8 L138.6 104.3 L138.3 104.4 L138.3 105.4 L138.3 105.9 L137.9 107.1 L137.4 107.6 L136.9 108.7 L136.8 109.9 L137.2 110.4 L137.5 111.1 L138.3 112.4 L139.4 112.6 L139.7 113.1 L139.7 114.3 L140.1 114.8 L140.1 115.9 L140.9 117.1 L141.2 117.8 L141.4 118.5 L141.6 118.9 L140.3 119.8 L140.7 120.0Z"/>
+<path class="p on" data-n="San Juan" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="San Juan. Con presencia de El Eje." d="M113.2 213.3 L114.8 213.7 L116.1 213.4 L117.6 214.4 L119.2 213.8 L122.6 218.5 L122.1 220.3 L122.9 222.1 L129.1 226.1 L128.1 229.0 L128.3 230.6 L129.5 231.6 L128.7 232.6 L129.2 234.1 L128.6 235.3 L127.7 234.2 L126.7 235.2 L127.7 236.8 L127.1 237.5 L128.1 237.5 L128.0 239.4 L127.4 239.4 L127.6 240.9 L127.5 243.0 L126.9 244.8 L126.6 246.4 L126.9 248.5 L128.2 249.1 L128.7 248.0 L130.3 246.8 L130.2 248.0 L131.4 247.6 L132.8 247.9 L134.8 248.5 L139.1 248.5 L143.7 251.6 L143.7 252.1 L145.6 252.0 L145.3 254.7 L147.6 255.3 L159.0 267.3 L159.1 270.4 L162.5 276.6 L166.5 279.3 L170.4 284.6 L169.7 286.9 L170.2 288.9 L169.5 292.3 L170.5 294.4 L169.7 298.7 L173.5 305.4 L174.8 305.4 L176.6 310.5 L179.3 313.3 L168.7 311.0 L166.5 312.6 L162.2 312.0 L162.2 316.0 L161.4 319.2 L163.0 322.1 L165.8 324.8 L166.6 326.5 L164.7 325.8 L164.7 324.9 L161.4 325.4 L160.4 323.6 L160.3 322.5 L157.5 323.0 L155.1 322.1 L151.5 321.3 L149.4 319.7 L149.2 318.5 L146.9 318.8 L145.6 319.8 L143.7 319.2 L140.0 320.2 L139.3 322.6 L133.2 325.3 L129.2 324.9 L128.8 319.4 L126.5 318.8 L125.5 317.6 L123.8 316.6 L121.0 317.3 L120.2 319.4 L118.3 318.1 L116.7 317.8 L114.7 319.4 L113.2 323.0 L111.5 325.0 L110.9 327.0 L111.6 329.3 L110.1 330.3 L107.8 331.7 L106.5 332.1 L105.0 330.4 L103.9 331.3 L102.9 333.3 L101.1 332.7 L101.7 331.6 L101.2 330.3 L101.6 330.1 L101.0 329.2 L100.1 328.6 L99.6 328.3 L99.2 328.3 L99.0 327.8 L99.2 327.2 L99.5 326.6 L99.3 326.0 L99.5 325.5 L99.2 325.2 L98.9 324.9 L98.4 324.6 L97.8 324.2 L97.4 323.8 L97.1 323.4 L97.3 322.9 L97.9 322.7 L97.5 322.4 L97.9 321.7 L97.4 321.2 L97.0 320.6 L97.6 320.1 L97.2 319.6 L96.9 319.1 L96.6 318.5 L96.7 318.2 L96.7 317.6 L95.9 317.2 L95.7 316.9 L96.2 316.7 L96.7 317.2 L97.2 317.2 L97.7 317.4 L98.1 316.8 L98.7 316.8 L98.6 316.0 L99.7 315.5 L99.7 315.0 L99.2 314.2 L98.9 313.6 L98.5 312.5 L97.2 312.6 L95.9 312.5 L94.3 312.0 L94.1 311.3 L93.9 309.8 L94.0 308.0 L93.9 306.8 L92.9 306.8 L92.5 305.1 L91.8 304.5 L91.5 303.1 L92.0 301.9 L91.8 300.9 L91.9 299.4 L92.5 297.6 L92.0 295.9 L92.4 293.9 L93.0 292.1 L93.3 290.9 L94.0 289.8 L95.4 290.6 L95.1 292.7 L96.6 291.5 L96.5 290.1 L96.4 289.0 L97.1 288.9 L97.9 288.6 L98.6 287.5 L97.7 286.2 L97.1 285.4 L97.9 283.0 L98.2 280.7 L99.0 279.0 L98.9 277.4 L99.5 275.8 L99.7 273.9 L100.6 272.8 L101.6 270.9 L100.6 269.3 L102.1 268.6 L103.3 270.1 L104.4 269.6 L105.4 269.7 L106.9 269.0 L106.8 267.8 L106.8 266.6 L107.3 265.6 L107.8 264.7 L108.4 263.9 L108.4 262.6 L108.0 261.4 L106.5 261.5 L105.8 262.4 L105.4 261.4 L105.5 260.5 L106.3 259.9 L106.4 258.7 L106.8 257.5 L106.8 256.5 L107.0 255.0 L107.3 254.2 L106.8 253.1 L107.2 251.2 L107.2 250.1 L106.5 249.8 L105.8 249.0 L105.7 247.8 L105.9 246.3 L105.7 245.3 L105.4 243.9 L105.0 243.1 L105.3 242.2 L104.2 241.2 L104.4 240.1 L104.4 238.9 L105.5 237.4 L105.9 236.0 L105.8 234.8 L107.7 234.2 L109.4 233.9 L109.3 232.6 L109.4 230.8 L109.9 229.1 L110.1 227.7 L109.6 227.1 L110.6 226.1 L111.0 224.6 L111.9 223.5 L111.4 222.6 L110.4 222.4 L110.3 221.1 L111.2 219.3 L111.6 218.1 L112.2 216.8 L112.2 215.0 L111.4 214.1 L113.2 213.3Z"/>
+<path class="p on" data-n="San Luis" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="San Luis. Con presencia de El Eje." d="M215.2 401.7 L215.2 430.8 L180.3 430.5 L180.4 428.7 L180.5 427.1 L181.4 424.5 L181.5 423.3 L181.8 421.6 L182.3 420.3 L181.6 418.9 L182.5 417.6 L183.0 415.6 L182.4 414.6 L183.0 412.6 L183.9 410.9 L182.7 410.1 L183.7 409.1 L183.6 407.1 L183.5 405.1 L183.1 403.4 L182.4 402.1 L182.3 401.2 L183.0 400.4 L182.5 399.4 L181.8 397.3 L181.4 395.8 L180.3 395.5 L179.0 394.6 L180.6 394.0 L179.5 393.5 L179.0 392.4 L178.5 391.7 L178.5 390.6 L178.0 390.0 L177.7 388.5 L177.8 386.6 L177.4 384.8 L176.7 384.3 L176.4 383.1 L177.0 382.2 L176.8 381.1 L176.8 379.5 L177.8 379.5 L177.9 378.7 L178.2 377.5 L178.2 376.2 L178.5 374.4 L179.2 373.1 L179.7 372.0 L178.4 371.0 L176.7 369.0 L174.8 368.8 L174.8 367.2 L174.1 365.9 L173.0 364.9 L171.8 362.6 L172.0 361.8 L171.0 361.1 L169.9 359.3 L169.4 358.3 L168.6 356.3 L168.5 354.1 L168.2 351.9 L167.9 349.8 L168.5 348.4 L168.0 346.9 L167.8 345.0 L167.1 343.2 L166.6 340.9 L168.0 340.0 L168.2 338.2 L168.4 336.6 L167.3 335.4 L166.4 334.6 L167.0 333.3 L165.9 333.1 L166.3 331.4 L165.2 330.7 L165.5 329.9 L165.4 328.5 L164.7 327.0 L164.3 325.7 L166.1 326.4 L165.9 324.9 L163.7 323.0 L162.2 321.0 L161.6 319.0 L162.2 316.5 L161.9 311.8 L165.8 312.5 L168.6 311.0 L171.1 311.6 L173.3 312.1 L176.3 312.8 L178.0 313.3 L179.2 313.2 L183.2 315.4 L187.3 314.9 L194.0 313.6 L199.9 312.9 L204.6 312.6 L211.6 317.8 L212.6 325.3 L218.9 324.0 L218.7 327.0 L220.1 330.5 L220.7 331.9 L219.4 332.6 L218.4 336.7 L217.9 341.3 L216.8 345.1 L215.7 348.3 L213.4 349.9 L213.5 360.0 L214.5 390.9 L215.0 396.4 L215.2 401.7Z"/>
+<path class="p on" data-n="Santa Fe" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Santa Fe. Con presencia de El Eje." d="M324.0 352.2 L324.0 352.7 L323.7 353.5 L322.9 354.3 L322.5 356.0 L322.2 356.8 L321.2 357.5 L320.6 358.4 L320.5 359.5 L320.6 360.2 L320.4 360.8 L319.9 361.2 L319.6 361.7 L319.6 362.7 L318.9 363.1 L317.8 363.2 L316.8 362.9 L315.9 362.4 L315.1 361.8 L314.6 361.5 L313.2 361.3 L312.3 361.1 L311.8 360.6 L311.6 360.2 L311.0 360.1 L309.7 360.9 L309.2 361.7 L309.2 362.8 L308.9 363.3 L308.2 363.9 L307.0 365.0 L302.2 371.2 L298.2 376.0 L291.2 384.2 L284.7 384.3 L264.9 384.3 L271.8 372.8 L282.3 355.3 L286.5 348.2 L287.6 347.5 L288.8 345.7 L289.6 345.0 L289.7 343.6 L290.0 342.2 L289.6 341.0 L289.9 339.7 L289.8 339.0 L289.6 338.2 L289.2 337.8 L289.0 337.6 L288.3 336.6 L288.1 335.9 L287.1 335.9 L286.6 335.7 L286.3 335.4 L286.1 335.4 L286.1 334.6 L286.8 334.0 L287.3 333.6 L287.4 332.9 L286.8 333.0 L286.6 332.8 L286.6 332.6 L287.0 332.2 L287.0 331.9 L286.8 331.7 L286.4 331.5 L286.7 331.2 L286.8 331.0 L286.7 330.6 L286.8 330.3 L285.9 328.1 L284.7 326.1 L284.0 323.4 L282.3 322.2 L280.8 320.6 L280.4 319.1 L280.7 317.8 L281.1 315.6 L280.6 313.6 L279.9 312.8 L279.9 309.7 L279.9 308.4 L279.5 307.5 L281.4 305.2 L282.0 305.1 L284.4 295.8 L288.1 279.9 L281.6 275.7 L284.7 250.4 L290.9 201.3 L354.1 201.5 L354.8 201.6 L355.0 202.2 L354.9 203.6 L354.3 204.6 L353.5 205.1 L352.4 205.4 L351.2 205.3 L350.4 207.0 L350.0 208.4 L350.4 210.1 L351.0 211.8 L350.9 213.4 L351.6 214.3 L351.1 215.9 L350.3 217.1 L350.0 218.1 L350.4 219.5 L350.7 220.5 L350.2 221.7 L349.6 223.4 L349.1 226.2 L348.0 228.5 L347.8 230.0 L348.0 231.0 L347.5 231.9 L346.1 233.0 L344.7 233.6 L344.2 234.2 L344.5 235.0 L344.5 235.8 L344.2 236.1 L343.2 236.5 L342.1 236.9 L341.0 237.7 L341.0 238.8 L340.8 239.9 L340.3 240.6 L339.4 241.3 L339.1 241.4 L339.3 243.1 L338.6 244.6 L338.3 245.2 L338.2 245.5 L338.9 246.7 L338.7 248.2 L338.4 249.4 L338.4 250.6 L338.7 251.2 L338.7 251.7 L338.0 253.1 L337.6 254.1 L338.1 255.0 L338.8 255.9 L339.2 257.3 L339.6 259.0 L339.4 260.6 L338.8 261.6 L338.4 263.5 L338.2 264.2 L338.0 265.1 L338.1 266.1 L337.5 268.2 L337.2 269.3 L336.9 270.4 L336.8 271.0 L337.2 272.0 L337.7 272.5 L337.8 274.2 L337.8 275.6 L337.7 276.6 L338.1 278.1 L338.3 279.2 L337.8 280.0 L337.2 280.6 L336.7 281.9 L336.2 283.4 L335.4 284.6 L334.2 285.7 L333.5 287.4 L332.1 290.1 L330.3 292.9 L329.9 294.1 L328.6 295.2 L328.2 295.7 L327.9 296.4 L328.1 297.3 L327.6 298.2 L327.4 299.0 L326.9 299.7 L326.2 300.3 L325.6 301.0 L325.3 301.7 L324.7 302.4 L323.6 302.6 L322.7 303.0 L322.3 303.6 L322.4 304.1 L322.4 304.9 L321.0 306.0 L319.7 307.3 L318.3 307.4 L317.2 307.4 L315.7 308.7 L315.3 311.5 L315.2 312.2 L315.0 313.8 L314.4 314.7 L314.6 315.5 L314.8 316.5 L314.9 317.6 L315.2 318.3 L314.6 319.5 L314.1 320.9 L314.5 322.0 L314.8 322.5 L314.7 324.2 L314.7 325.2 L314.0 325.3 L313.6 325.6 L313.4 326.1 L313.9 326.9 L313.7 328.4 L313.2 329.8 L312.7 330.7 L313.2 331.8 L313.2 333.2 L313.2 334.2 L314.0 335.5 L313.8 337.4 L314.4 339.0 L315.2 339.7 L314.9 340.8 L314.5 341.4 L315.3 342.2 L316.2 343.5 L316.4 344.6 L317.7 346.5 L318.9 348.2 L320.2 349.6 L321.1 350.0 L321.8 349.9 L322.5 349.8 L323.1 350.0 L323.5 350.4 L323.6 350.7 L323.3 351.4 L323.8 351.9 L324.2 352.1 L324.3 352.5 L324.0 352.2Z"/>
+<path class="p on" data-n="Santiago del Estero" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Santiago del Estero. Con presencia de El Eje." d="M282.4 270.1 L280.4 267.5 L275.0 268.1 L273.7 268.1 L272.5 266.7 L271.5 264.4 L271.7 262.4 L272.3 261.3 L270.2 258.8 L268.1 256.5 L266.6 254.7 L267.5 253.1 L252.5 252.3 L252.3 250.4 L251.4 250.4 L251.5 248.6 L246.6 248.3 L245.0 248.0 L244.7 246.7 L244.1 245.9 L243.2 246.1 L242.7 247.2 L242.0 247.6 L240.9 247.4 L241.1 245.7 L239.1 245.3 L233.4 244.2 L228.7 244.6 L223.0 245.4 L221.2 246.1 L219.3 238.0 L220.5 230.6 L218.1 224.8 L215.8 222.6 L214.1 220.7 L212.4 219.3 L214.6 216.8 L214.6 213.8 L214.4 204.4 L213.4 201.3 L212.4 198.3 L215.3 197.7 L216.6 194.9 L218.3 194.1 L216.8 191.9 L216.6 189.6 L217.3 186.3 L217.3 183.2 L219.8 181.5 L220.8 179.3 L222.0 174.0 L223.8 168.4 L225.3 166.7 L227.0 162.5 L228.5 162.8 L228.0 156.9 L229.2 152.1 L229.0 149.0 L230.5 146.1 L231.9 141.6 L233.9 137.1 L235.2 135.4 L239.4 136.5 L239.1 134.3 L251.0 135.7 L252.8 134.0 L291.4 133.7 L291.4 148.1 L291.2 168.4 L291.7 182.1 L291.2 201.9 L289.2 221.3 L286.2 238.3 L282.4 270.1Z"/>
+<path class="p on" data-n="Tucumán" data-on="1" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Tucumán. Con presencia de El Eje." d="M212.1 199.1 L209.9 196.9 L208.2 197.3 L206.3 198.4 L204.7 200.4 L204.4 201.9 L203.6 200.5 L202.6 200.4 L202.0 199.9 L201.5 198.9 L201.5 197.9 L201.3 196.5 L201.0 195.7 L200.2 195.0 L199.6 194.7 L199.2 195.0 L199.2 195.8 L199.0 196.3 L198.4 195.8 L198.3 195.1 L197.9 193.5 L197.6 192.6 L197.4 192.0 L196.8 191.6 L196.2 191.3 L195.5 188.9 L195.4 187.8 L195.2 186.6 L195.2 185.4 L195.3 184.1 L195.4 183.3 L195.3 182.5 L194.9 181.8 L194.5 181.8 L194.2 181.4 L193.5 181.3 L193.1 181.1 L192.7 180.9 L192.2 180.6 L191.8 180.3 L191.6 179.9 L191.8 179.6 L192.0 179.0 L192.0 178.9 L192.2 179.0 L192.5 178.9 L192.8 178.9 L192.7 178.5 L193.0 178.3 L193.2 177.9 L193.1 177.5 L193.4 177.2 L193.7 176.7 L194.2 176.2 L194.6 176.0 L194.9 176.0 L195.2 175.6 L195.3 174.6 L195.2 174.5 L195.5 173.8 L196.0 173.5 L196.5 173.1 L196.6 172.6 L196.6 172.3 L197.1 172.0 L197.5 171.6 L197.5 171.0 L197.9 170.8 L197.9 170.2 L197.7 169.9 L197.5 169.6 L197.1 169.6 L197.2 169.3 L196.8 168.8 L196.7 168.2 L198.1 166.7 L198.5 166.0 L198.5 165.5 L198.2 165.1 L197.8 164.7 L193.7 161.4 L190.4 162.3 L190.5 162.0 L190.4 161.5 L190.5 161.3 L190.8 161.2 L190.6 160.8 L190.6 160.6 L190.9 160.5 L190.9 160.1 L190.8 159.7 L191.0 159.6 L190.7 159.3 L190.6 159.0 L190.9 158.8 L190.6 158.1 L191.0 157.3 L191.1 156.8 L191.0 156.1 L191.1 155.8 L192.0 155.1 L192.0 154.5 L192.2 154.4 L192.0 153.7 L191.9 153.2 L191.9 153.0 L191.8 152.8 L191.9 152.5 L192.0 152.0 L192.0 151.4 L192.5 151.4 L192.4 151.2 L192.3 150.7 L192.5 150.6 L192.8 150.9 L193.4 151.1 L193.7 151.5 L201.0 154.3 L201.1 153.7 L200.9 153.1 L201.4 152.7 L200.9 152.2 L201.2 151.7 L201.0 151.5 L201.3 151.0 L201.4 150.6 L201.1 150.6 L201.0 150.3 L201.4 149.8 L201.6 149.4 L201.6 148.9 L201.4 148.8 L201.7 147.6 L202.8 147.4 L202.9 147.7 L203.4 147.7 L203.8 147.6 L204.2 147.3 L204.6 146.8 L205.6 146.9 L206.0 146.7 L206.5 146.8 L206.9 146.8 L207.3 147.4 L207.8 147.3 L208.1 146.9 L208.5 146.6 L208.7 146.2 L209.2 146.0 L209.7 146.0 L209.9 146.3 L210.2 146.6 L210.5 146.5 L210.6 146.6 L210.6 146.8 L210.6 147.1 L210.8 148.1 L211.0 148.7 L211.1 149.2 L212.2 149.5 L212.2 149.7 L212.8 149.8 L216.4 150.9 L216.1 151.3 L216.1 151.8 L216.3 152.1 L216.4 152.5 L216.9 152.4 L217.3 152.2 L217.7 152.2 L218.0 152.3 L218.0 152.7 L218.3 153.0 L218.6 152.8 L219.1 152.6 L219.6 152.4 L219.7 152.2 L219.8 152.4 L220.1 152.2 L220.4 151.8 L220.6 151.4 L220.7 151.2 L221.2 151.0 L221.3 151.1 L221.6 150.8 L222.0 150.6 L222.5 150.7 L222.8 150.9 L223.1 151.1 L223.8 150.9 L224.3 150.9 L224.5 151.1 L225.0 151.2 L225.6 150.9 L226.2 150.7 L226.6 150.5 L227.2 150.6 L227.8 150.7 L228.0 150.4 L228.6 150.5 L229.3 152.1 L228.0 156.9 L228.5 162.7 L227.1 162.3 L225.2 166.6 L223.8 168.4 L221.0 178.8 L220.0 181.4 L217.5 182.9 L217.3 186.7 L216.5 189.2 L216.6 190.8 L217.4 192.9 L218.4 194.2 L216.6 194.7 L215.2 197.6 L213.0 198.1 L212.4 198.3 L212.8 199.5 L212.1 199.1Z"/>
+<g class="sede" data-n="CABA" tabindex="0" role="button" aria-expanded="false" aria-controls="mapTip" aria-label="Ciudad Autónoma de Buenos Aires. Sede central de El Eje."><circle class="sede-pulse" cx="365.7" cy="390.4" r="8"/><circle class="sede-dot" cx="365.7" cy="390.4" r="8"/></g>
+</svg>
+        </div>
+      </div>
+    </div>
+    <div class="map-tip" id="mapTip" aria-hidden="true"></div>
+    <p id="mapStatus" class="sr-only" role="status" aria-live="polite"></p>
+    <p id="mapSummary" class="sr-only">El Eje tiene presencia en 16 provincias: Buenos Aires, Chaco, Corrientes, Córdoba, Entre Ríos, Jujuy, Mendoza, Misiones, Neuquén, Río Negro, Salta, San Juan, San Luis, Santa Fe, Santiago del Estero, Tucumán. Sede central: Ciudad Autónoma de Buenos Aires (CABA).</p>
+  </section>
+
+  <!-- ===================== VALORES ===================== -->
+  <section class="section valores" id="valores">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>04 · Lo que nos ordena</p>
+      <h2 class="sec-title" data-reveal>Nuestros <em>valores.</em></h2>
+      <p class="lead" data-reveal>No son consignas: son la brújula de cada decisión.</p>
+      <div class="val-grid">
+        <article class="val-card" data-reveal><p class="val-num">01</p><h3>Libertad</h3><p>La libertad individual, política y económica como base de una sociedad próspera.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">02</p><h3>Organización</h3><p>Los cambios profundos no son espontáneos: exigen orden, estructura y trabajo sostenido.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">03</p><h3>Formación</h3><p>Estudio y debate permanente. No queremos repetir consignas, sino comprender la realidad y decidir.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">04</p><h3>Vocación de poder</h3><p>Entendemos el poder como herramienta para transformar la realidad y servir a la sociedad.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">05</p><h3>Mérito y esfuerzo</h3><p>Las responsabilidades se ganan con trabajo, preparación y resultados.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">06</p><h3>Liderazgo</h3><p>Formamos jóvenes con carácter y criterio. Un verdadero líder no busca seguidores: construye nuevos líderes.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">07</p><h3>Comunidad</h3><p>Una comunidad de pertenencia y confianza. Nos acompañamos, nos exigimos y crecemos juntos.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">08</p><h3>Humildad</h3><p>Tenemos ambición, pero sabemos que hay mucho por aprender. Escuchamos, corregimos y avanzamos.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">09</p><h3>Lealtad</h3><p>Valoramos la palabra y la coherencia. Las diferencias se debaten; los acuerdos se respetan.</p></article>
+        <article class="val-card" data-reveal><p class="val-num">10</p><h3>Compromiso con la Argentina</h3><p>Todo lo que hacemos apunta a un objetivo mayor: un país libre, ordenado y próspero.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NUESTRA FUERZA ===================== -->
+  <section class="fuerza" id="fuerza" aria-labelledby="fuerza-h">
+    <span class="grain" aria-hidden="true"></span>
+    <div class="wrap">
+      <p class="kick" data-reveal>Nuestra fuerza</p>
+      <h2 id="fuerza-h" data-reveal>Durante años se les dijo a los jóvenes que debían <span class="accent">esperar.</span> Decidimos <span class="accent">dejar de hacerlo.</span></h2>
+      <p data-reveal>Nos involucramos y levantamos una organización capaz de representar a una generación que no se resigna, que no acepta el fracaso como destino y que no pide permiso para defender sus ideas.</p>
+      <p data-reveal>Tener razón no alcanza: hacen falta disciplina, conducción y respaldo. <span class="em">El Eje existe para construir todo eso.</span></p>
+      <div class="stack" data-reveal>
+        <b>Una generación que se prepara.</b>
+        <b>Una comunidad que se ordena.</b>
+        <b>Una fuerza que avanza.</b>
+      </div>
+      <p class="final" data-reveal>Somos EL EJE.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL (Sumate) ===================== -->
+  <section class="cta-final" id="sumate" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div class="cta-box" data-reveal>
+        <h2 id="cta-h">La Argentina <span class="accent">no se construye sola.</span></h2>
+        <p>Buscamos protagonistas, no público: jóvenes con ganas de comprometerse y construir el futuro del país. ¿Estás a la altura?</p>
+        <a href="https://elelearg.github.io/el-eje-formulario/?cb=4" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xl">Sumate a EL EJE <span class="arw" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand" aria-label="EL EJE — inicio"><span class="logo-mark"></span><span class="wm">EL <b>EJE</b></span></a>
+        <p>Organización política de jóvenes. Formación, organización y presencia federal para una Argentina libre.</p>
+        <p class="foot-slogan">Los jóvenes primero.</p>
+      </div>
+      <nav class="foot-cols" aria-label="Navegación del pie">
+        <div class="foot-col">
+          <h2>Navegación</h2>
+          <a href="#nosotros">Quiénes somos</a>
+          <a href="#numeros">Números</a>
+          <a href="#mision">Misión y visión</a>
+          <a href="#federal">Presencia federal</a>
+          <a href="#valores">Valores</a>
+        </div>
+        <div class="foot-col">
+          <h2>Sumate</h2>
+          <a href="https://elelearg.github.io/el-eje-formulario/?cb=4" target="_blank" rel="noopener noreferrer">Formulario de admisión</a>
+          <a href="https://www.instagram.com/elejearg?igsh=cGF0ZGliaDRoejV3" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EL EJE (abre en pestaña nueva)">Instagram</a>
+          <a href="https://www.tiktok.com/@elejearg?_r=1&_t=ZS-98c9Wth0aPc" target="_blank" rel="noopener noreferrer" aria-label="TikTok de EL EJE (abre en pestaña nueva)">TikTok</a>
+        </div>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> EL EJE · de una Argentina libre.</span>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="totop" id="totop" aria-label="Volver arriba" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+(function(){
+  "use strict";
+
+  var docEl = document.documentElement;
+  var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var mobileQuery = window.matchMedia('(max-width:980px)');
+  var reduceMotion = motionQuery.matches;
+  function isMobile(){ return mobileQuery.matches; }
+
+  /* ---------- Año dinámico ---------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Referencias base ---------- */
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('links');
+  var body = document.body;
+  var totop = document.getElementById('totop');
+
+  /* ==========================================================
+     MENÚ MÓVIL (bloqueo de scroll iOS, focus trap, inert)
+     ========================================================== */
+  var scrollYStore = 0;
+
+  function menuFocusables(){
+    var list = [burger];
+    Array.prototype.forEach.call(links.querySelectorAll('a, button'), function(el){ list.push(el); });
+    return list;
+  }
+  function updateInert(){
+    if (!('inert' in HTMLElement.prototype)) return;
+    links.inert = (isMobile() && !links.classList.contains('open'));
+  }
+  function openMenu(){
+    if (links.classList.contains('open')) return;
+    scrollYStore = window.scrollY || window.pageYOffset;
+    links.classList.add('open');
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Cerrar menú');
+    body.classList.add('menu-open');
+    body.style.top = (-scrollYStore) + 'px';
+    if ('inert' in HTMLElement.prototype) links.inert = false;
+  }
+  function closeMenu(returnFocus){
+    if (!links.classList.contains('open')) { updateInert(); return; }
+    links.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Abrir menú');
+    body.classList.remove('menu-open');
+    body.style.top = '';
+    window.scrollTo(0, scrollYStore);
+    updateInert();
+    if (returnFocus) burger.focus();
+    requestScroll();
+  }
+  burger.addEventListener('click', function(){
+    if (links.classList.contains('open')) closeMenu(false); else openMenu();
+  });
+
+  /* ---------- Navegación interna suave (respeta header y reduce-motion) ---------- */
+  function smoothTo(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    if (el.hasAttribute('tabindex')) el.focus({ preventScroll: true });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1);
+      if (!id || !document.getElementById(id)) return;
+      e.preventDefault();
+      if (links.classList.contains('open')) closeMenu(false);
+      requestAnimationFrame(function(){ smoothTo(id); });
+    });
+  });
+  // Enlaces externos dentro del menú: cerrar el menú al usarlos
+  Array.prototype.forEach.call(links.querySelectorAll('a[target="_blank"]'), function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+
+  /* ---------- Cierres del menú ---------- */
+  // Escape (cierra menú y devuelve foco) + Escape cierra tooltip del mapa
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    if (links.classList.contains('open')) closeMenu(true);
+    closeActiveProvince();
+  });
+  // Focus trap mientras el menú está abierto
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Tab' || !links.classList.contains('open') || !isMobile()) return;
+    var f = menuFocusables();
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    else if (document.activeElement !== burger && !links.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+  });
+  // Tocar fuera
+  document.addEventListener('click', function(e){
+    if (links.classList.contains('open') && !links.contains(e.target) && !burger.contains(e.target)) closeMenu(false);
+  });
+
+  /* ==========================================================
+     VOLVER ARRIBA
+     ========================================================== */
+  function setTotopVisible(v){
+    totop.classList.toggle('show', v);
+    totop.setAttribute('aria-hidden', v ? 'false' : 'true');
+    totop.setAttribute('tabindex', v ? '0' : '-1');
+  }
+  totop.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    var brand = document.querySelector('.brand');
+    if (brand){ brand.setAttribute('tabindex', '-1'); brand.focus({ preventScroll: true }); }
+  });
+
+  /* ==========================================================
+     SCROLL UNIFICADO: header + volver arriba + scrollspy + cierre de mapa
+     ========================================================== */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav.links a[href^="#"]'));
+  var sections = navLinks
+    .map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+  var ticking = false;
+
+  function onScrollFrame(){
+    var y = window.scrollY || window.pageYOffset;
+    nav.classList.toggle('scrolled', y > 20);
+    setTotopVisible(y > 600);
+
+    if (sections.length){
+      var probe = y + nav.offsetHeight + 20;
+      var currentId = null;
+      for (var i = 0; i < sections.length; i++){
+        var s = sections[i], top = s.offsetTop, bottom = top + s.offsetHeight;
+        if (probe >= top && probe < bottom){ currentId = s.id; break; }
+      }
+      navLinks.forEach(function(a){
+        var active = currentId !== null && a.getAttribute('href') === '#' + currentId;
+        a.classList.toggle('active', active);
+        if (active) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+    }
+    // Cerrar tooltip del mapa al desplazarse
+    closeActiveProvince();
+    ticking = false;
+  }
+  function requestScroll(){
+    if (!ticking){ ticking = true; requestAnimationFrame(onScrollFrame); }
+  }
+  window.addEventListener('scroll', requestScroll, { passive: true });
+  window.addEventListener('resize', function(){
+    if (!isMobile()) closeMenu(false);
+    updateInert();
+    closeActiveProvince();
+    requestScroll();
+  }, { passive: true });
+  window.addEventListener('orientationchange', function(){
+    closeMenu(false);
+    closeActiveProvince();
+  });
+
+  /* ==========================================================
+     REVEAL (mejora progresiva: sin JS/animación el contenido ya es visible)
+     ========================================================== */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  function revealAll(){ revealEls.forEach(function(el){ el.classList.add('in'); }); }
+  var revealIO = null;
+  if ('IntersectionObserver' in window && !reduceMotion){
+    revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(function(el){ revealIO.observe(el); });
+  } else {
+    revealAll();
+  }
+  // Escalonado en grillas
+  document.querySelectorAll('.val-grid, .mv-grid').forEach(function(grid){
+    Array.prototype.forEach.call(grid.children, function(c, i){
+      if (c.hasAttribute('data-reveal')) c.style.transitionDelay = (i * 55) + 'ms';
+    });
+  });
+
+  /* ==========================================================
+     CONTADORES (valores reales en el HTML; sólo bajan a 0 al animar)
+     ========================================================== */
+  var counters = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    if (reduceMotion){ el.textContent = target; return; }
+    el.textContent = '0';
+    var start = null, dur = 1400;
+    function frame(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(frame); else el.textContent = target;
+    }
+    requestAnimationFrame(frame);
+  }
+  if ('IntersectionObserver' in window && !reduceMotion){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
+    }, { threshold: .5 });
+    counters.forEach(function(c){ cio.observe(c); });
+  }
+  // Si no hay IO o hay reduce-motion, los valores reales ya están en el HTML.
+
+  /* ==========================================================
+     MAPA INTERACTIVO (mouse + teclado + táctil + lector)
+     ========================================================== */
+  var map = document.getElementById('argMap');
+  var tip = document.getElementById('mapTip');
+  var liveRegion = document.getElementById('mapStatus');
+  var activeMapEl = null;   // provincia "fijada" (abierta)
+  var tipRAF = null, lastPointer = null;
+
+  function tipParts(el){
+    var name = el.classList.contains('sede') ? 'CABA' : el.getAttribute('data-n');
+    var sub = el.classList.contains('sede') ? ' · sede central'
+            : (el.getAttribute('data-on') === '1' ? ' · con presencia' : '');
+    return { name: name, sub: sub, full: name + sub };
+  }
+  function renderTip(el){
+    while (tip.firstChild) tip.removeChild(tip.firstChild);
+    var p = tipParts(el);
+    var b = document.createElement('b');
+    b.textContent = p.name;              // textContent: sin construir HTML
+    tip.appendChild(b);
+    if (p.sub) tip.appendChild(document.createTextNode(p.sub));
+  }
+  function clampTip(x, y){
+    var r = tip.getBoundingClientRect(), m = 8;
+    tip.style.left = Math.min(Math.max(x, m), window.innerWidth  - r.width  - m) + 'px';
+    tip.style.top  = Math.min(Math.max(y, m), window.innerHeight - r.height - m) + 'px';
+  }
+  function showTipCentered(el){
+    renderTip(el);
+    tip.classList.add('show');
+    var b = el.getBoundingClientRect();
+    var r = tip.getBoundingClientRect();
+    var top = b.top - r.height - 10;
+    if (top < 8) top = b.bottom + 10;     // sin espacio arriba -> abajo
+    clampTip(b.left + b.width / 2 - r.width / 2, top);
+  }
+  function hideTip(){ if (tip) tip.classList.remove('show'); }
+
+  function closeActiveProvince(){
+    if (activeMapEl){
+      activeMapEl.classList.remove('hl');
+      activeMapEl.setAttribute('aria-expanded', 'false');
+      activeMapEl = null;
+    }
+    hideTip();
+  }
+  function openProvince(el){
+    if (activeMapEl && activeMapEl !== el) closeActiveProvince();
+    activeMapEl = el;
+    el.classList.add('hl');
+    el.setAttribute('aria-expanded', 'true');
+    showTipCentered(el);
+    if (liveRegion) liveRegion.textContent = tipParts(el).full;  // sólo por teclado/clic/toque
+  }
+  function toggleProvince(el){
+    if (activeMapEl === el) closeActiveProvince(); else openProvince(el);
+  }
+  // Vista previa transitoria (hover/focus), sin fijar ni anunciar por live region
+  function preview(el){
+    el.classList.add('hl');
+    showTipCentered(el);
+  }
+  function endPreview(el){
+    if (activeMapEl === el) return;              // está fijada: no tocar
+    el.classList.remove('hl');
+    if (activeMapEl) showTipCentered(activeMapEl); // restaurar la fijada
+    else hideTip();
+  }
+
+  if (map && tip){
+    var provinces = Array.prototype.slice.call(map.querySelectorAll('.p, .sede'));
+    provinces.forEach(function(el){
+      el.addEventListener('mouseenter', function(){ preview(el); });
+      el.addEventListener('mousemove', function(ev){
+        lastPointer = { x: ev.clientX, y: ev.clientY };
+        if (tipRAF) return;
+        tipRAF = requestAnimationFrame(function(){
+          tipRAF = null;
+          if (!lastPointer) return;
+          var r = tip.getBoundingClientRect();
+          clampTip(lastPointer.x - r.width / 2, lastPointer.y - r.height - 12);
+        });
+      });
+      el.addEventListener('mouseleave', function(){ endPreview(el); });
+      el.addEventListener('focus', function(){ preview(el); });
+      el.addEventListener('blur', function(){ endPreview(el); });
+      el.addEventListener('keydown', function(ev){
+        if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar'){ ev.preventDefault(); toggleProvince(el); }
+        else if (ev.key === 'Escape'){ closeActiveProvince(); }
+      });
+      el.addEventListener('click', function(){ toggleProvince(el); });
+    });
+    // Tocar/clickear fuera del mapa cierra
+    document.addEventListener('click', function(e){ if (!map.contains(e.target)) closeActiveProvince(); });
+  }
+
+  /* ==========================================================
+     MOVIMIENTO REDUCIDO DINÁMICO
+     ========================================================== */
+  function onMotionChange(e){
+    reduceMotion = e.matches;
+    if (reduceMotion){
+      revealAll();                                   // no ocultar contenido
+      counters.forEach(function(c){ c.textContent = c.getAttribute('data-count'); });
+    }
+  }
+  if (motionQuery.addEventListener) motionQuery.addEventListener('change', onMotionChange);
+  else if (motionQuery.addListener) motionQuery.addListener(onMotionChange);
+
+  /* ---------- Arranque ---------- */
+  onScrollFrame();
+  updateInert();
+})();
+</script>
+</body>
+</html>
